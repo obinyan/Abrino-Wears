@@ -1,0 +1,698 @@
+/* Reset and global styles */
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    width: 20rem;
+    height: 20rem;
+    display: block;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+}
+
+/* Reusable button */
+.btn {
+    background-color: #000;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+.btn:hover {
+    background-color: #444;
+}
+
+/* Scroll animation class */
+.scrolled {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+body {
+    background-color: #fff;
+    color: #000;
+    line-height: 1.6;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+}
+
+/* Header / Navbar */
+.heading-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: rgba(255, 255, 255, 0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Logo */
+.logo img {
+    height: 60px;
+    width: 75px;
+}
+
+/* Hamburger (for mobile) */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Navigation bar */
+.nav-bar ul {
+    display: flex;
+    list-style: none;
+    gap: 65px;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-bar ul li a:hover {
+    color: #555;
+}
+
+.nav-bar ul li p:hover{
+    cursor: pointer;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 23px;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f2f2f2;
+}
+
+/* Order Icons */
+.oder-icons {
+    display: flex;
+    align-items: center;
+}
+
+.oder-icons img {
+    height: 26px;
+    width: 26px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;*/
+    padding: 150px 0 0 100px ;
+    background-color: #f9f9f9;
+    /*margin-top: 100px; /* Space for fixed header */
+    background-image: url('AYOBA-scaled.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-text h1 {
+    font-size: 110px;
+    font-weight: 500;
+    font-family: "Playfair", serif;
+    font-optical-sizing: auto;;
+    font-style: normal;
+    color: #000;
+}
+
+.hero-text p {
+    font-size: 25px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    margin: 0 0 20px 0;
+    color: #444;
+}
+
+button {
+    /*padding: 12px 30px;*/
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    border: 2px solid #FF8C00;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+    
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #333;
+    border: 2px solid #18168b;
+}
+
+/*the first display section*/
+/* Container */
+.first-display {
+    padding: 80px 50px;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Heading Section */
+.fd-heading h3 {
+    font-size: 20px;
+    font-family: "Playfair", serif;
+    font-optical-sizing: auto;;
+    font-style: normal;
+    color: #444;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.fd-heading h2 {
+    font-size: 60px;
+    font-weight: bold;
+    font-family: "Playfair", serif;
+    font-optical-sizing: auto;;
+    font-style: normal;
+    margin-bottom: 50px;
+    color: #000;
+    letter-spacing: 2px;
+}
+
+/* Content Grid */
+.fd-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Each Product Item */
+.fd-item {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.fd-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Product Title */
+.fd-item h4 {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    margin-top: 15px;
+    color: #111;
+    line-height: 1.4;
+}
+
+/* Price */
+.fd-item p {
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: #000;
+    margin-top: 8px;
+}
+
+/* Hover Effect */
+.fd-item:hover {
+    transform: translateY(-5px);
+    
+}
+
+.fd-item img:hover {
+    border: 2px solid #680ebd;
+}
+
+/*the second display section*/
+.second-display {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+/* Image container */
+.cover-image {
+    width: 50vw;
+    height: 100vh;
+}
+
+.cover-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Content Section */
+.sd-content {
+    width: 50vw;
+    height: 100vh;
+    background-color: #1f0f0f; /* Deep dark brown */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 60px;
+}
+
+.sd-content h3 {
+    font-size: 26px;
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    margin-bottom: 20px;
+    text-transform: lowercase;
+}
+
+.sd-content p {
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    line-height: 1.6;
+    color: #ddd;
+    margin-bottom: 30px;
+    max-width: 400px;
+}
+
+/* Button styling */
+.sd-content button {
+    padding: 12px 30px;
+    font-size: 15px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.sd-content button:hover {
+    background-color: #fff;
+    color: #1f0f0f;
+}
+
+/*the third display section*/
+.third-display {
+    background-color: #ffffff; /* White background for the section */
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    /*max-width: 1200px; /* Limit overall width */
+    width: 100%;
+}
+
+.td-heading {
+    margin-bottom: 40px;
+}
+
+.td-heading h3 {
+    font-size: 1.7rem;
+    font-weight: 400; /* Lighter weight for "OUR" */
+    font-family: "Playfair", serif;
+    font-optical-sizing: auto;;
+    font-style: normal;
+    color: #000;
+    padding: 100px 0 10px 0;
+    /*letter-spacing: 2px;*/
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.td-heading h2 {
+    font-size: 2.5rem; /* Larger font size for "BESTSELLERS" */
+    font-weight: 700; /* Bold weight for "BESTSELLERS" */
+    font-family: "Playfair", serif;
+    font-optical-sizing: auto;;
+    font-style: normal;
+    color: #000;
+    margin: 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.td-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: center; /* Center items when they wrap */
+    gap: 40px; /* Space between items */
+    padding: 0 0 70px 0;
+}
+
+.td-item {
+    flex: 1; /* Allow items to grow and shrink */
+    min-width: 280px; /* Minimum width for each item before wrapping */
+    max-width: 40%; /* Max width for two items per row, with some gap */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures image corners are rounded if desired */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.td-item:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    border: 2px solid #680ebd; /* Border color change on hover */
+}
+
+.td-item img {
+    width: 525px;
+    height: auto;
+    display: block;
+    border-radius: 4px; /* Slightly rounded corners for images */
+    object-fit: cover; /* Ensures images cover their area without distortion */
+    transition: transform 0.3s ease; /* Smooth zoom effect on image */
+}
+
+.td-item a:hover img {
+    transform: scale(1.02); /* Slight zoom on image hover */
+}
+
+/*the fourth display section*/
+.fourth-display {
+    display: flex;
+            
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff; /* White background for the section */
+    padding: 20px 0 0 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    /*max-width: 1200px;*/
+    width: 100%;
+    gap: 0px; /* Gap between images and content */
+}
+
+.fd-image1,
+.fd-image2 {
+    flex-shrink: 0; /* Prevent images from shrinking */
+    width: 30%; /* Adjust as needed for image size balance */
+}
+
+.fd-image1 img,
+.fd-image2 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.fod-content {
+    /*flex-grow: 1; /* Allow content to take available space */
+    text-align: center;
+    padding: 0 20px;
+}
+
+.fod-content h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: #333333;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.fod-content h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: #1a1a1a;
+    margin: 0 0 30px 0; /* Space below the heading */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.email-contact {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.email-contact form {
+    display: flex;
+    gap: 10px; /* Space between input and button */
+    width: 100%;
+    /*max-width: 500px;*/ /* Limit form width */
+    /*border: 1px solid #e0e0e0;*/
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.email-contact input[type="email"] {
+    flex-grow: 1; /* Allows input to take most space */
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    width: 400px;
+    outline: none;
+    font-size: 1rem;
+    color: #333;
+    background-color: #ffffff;
+}
+
+.email-contact input[type="email"]::placeholder {
+    color: #a0a0a0;
+}
+
+.email-contact button {
+    background-color: #000000; /* Black button */
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.email-contact button:hover {
+    background-color: #333333; /* Darker black on hover */
+}
+
+/* FOOTER */
+footer {
+    background-color: #222;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: #ccc;
+}
+
+footer .contact-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+footer .contact-icons img {
+    width: 25px;
+    height: 25px;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: absolute;
+        left: 25px;
+    }
+
+    .logo {
+        position: relative;
+        left: 105px;
+    }
+
+    .nav-bar {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 0px;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+    }
+
+    .nav-bar.active {
+        display: block;
+    }
+
+    .nav-bar ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .oder-icons{
+        margin: 0 -20px 0 0;
+    }
+
+    .dropdown-content{
+        display: none;
+    }
+
+    .hero-section{
+        padding: 270px 0 0 0;
+    }
+
+    .hero-text {
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 40px;
+        font-weight: 800;
+    }
+
+    .hero-text p {
+        font-size: 18px;
+        font-weight: 600;
+        color: #000;
+        margin: 20px 0 20px 0;
+    }
+
+    .hero-button button{
+        margin: 20px 0 0 98px;
+    }
+
+    /*.first-display, .third-display, .fourth-display {
+        padding: 40px 20px;
+    }*/
+
+    .fd-heading h2, .td-heading h2 {
+        font-size: 2rem;
+    }
+
+    .td-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .td-item, .fd-item {
+        max-width: 100%;
+    }
+
+    .second-display {
+        flex-direction: column;
+        height: 110vh;
+    }
+
+    .cover-image, .sd-content {
+        width: 100vw;
+        /*height: auto;*/
+    }
+
+    .fourth-display {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .fd-image1, .fd-image2 {
+        width: 100%;
+    }
+
+    .fod-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .email-contact form {
+        flex-direction: column;
+    }
+
+    .email-contact input[type="email"],
+    .email-contact button {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
