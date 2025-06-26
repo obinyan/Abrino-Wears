@@ -196,6 +196,13 @@
             header.classList.remove('scrolled');
         }
     });
+
+    const slideMessage = document.querySelector('.slide-message');
+
+    slideMessage.addEventListener('click', function () {
+    // Permanently hide the slide until reload
+    slideMessage.style.display = 'none';
+    });
     </script>
 
     </html>
