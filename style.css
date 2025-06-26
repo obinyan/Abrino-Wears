@@ -610,12 +610,14 @@ footer .contact-icons img {
     .hamburger {
         display: block;
         position: absolute;
-        left: 25px;
+        top: 22px;
+        right: 25px;
+        font-size: 35px;
     }
 
     .logo {
         position: relative;
-        left: 105px;
+        right: 30px;
     }
 
     .nav-bar {
@@ -640,6 +642,7 @@ footer .contact-icons img {
 
     .oder-icons{
         margin: 0 -20px 0 0;
+        display: none;
     }
 
     .dropdown-content{
