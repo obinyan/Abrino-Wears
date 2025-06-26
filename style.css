@@ -207,6 +207,35 @@ button:hover {
     border: 2px solid #18168b;
 }
 
+/*slide message*/
+.slide-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #680ebd;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sliding {
+    display: inline-block;
+    animation: slideLeftFromHere 5s linear infinite;
+    
+}
+
+@keyframes slideLeftFromHere {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 /*the first display section*/
 /* Container */
 .first-display {
