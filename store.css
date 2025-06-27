@@ -1,0 +1,583 @@
+/* Reset and global styles */
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    width: 20rem;
+    height: 20rem;
+    display: block;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+}
+
+/* Reusable button */
+.btn {
+    background-color: #000;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+.btn:hover {
+    background-color: #444;
+}
+
+/* Scroll animation class */
+.scrolled {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    background-color: #fff;
+    color: #000;
+    line-height: 1.6;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+}
+
+/* Header / Navbar */
+/* Info Panel (Top Purple Bar) */
+.info-panel {
+    background-color: #c12da0; /* same purple tone */
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 14px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.info-panel a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.heading-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: rgba(255, 255, 255, 0.95);
+    position: fixed;
+    top: 32px; /* Push down to avoid overlapping the purple bar */
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* Logo */
+.logo img {
+    height: 60px;
+    width: 75px;
+}
+
+/* Hamburger (for mobile) */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Navigation bar */
+.nav-bar ul {
+    display: flex;
+    list-style: none;
+    gap: 65px;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-bar ul li a:hover {
+    color: #555;
+}
+
+.nav-bar ul li p:hover{
+    cursor: pointer;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 23px;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f2f2f2;
+}
+
+/* Order Icons */
+.oder-icons {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.cart-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.cart-container img {
+    height: 26px;
+    width: 26px;
+}
+
+/* Cart Count Badge */
+.cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background-color: red;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+    display: none;
+}
+
+/* Cart Popup */
+.cart-popup {
+    position: absolute;
+    top: 50px; /* adjust if needed */
+    right: 0;
+    width: 250px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+}
+
+.cart-popup h4 {
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+}
+
+.cart-popup ul {
+    list-style: none;
+    padding-left: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.cart-popup li {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+
+
+/*styling section*/
+section{
+    background-color: #D2C4B1;
+    background-image: url('AYOBA-scaled.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+}
+
+.fd-heading h2 {
+    font-size: 60px;
+    font-weight: bold;
+    font-family: "Playfair", serif;
+    font-style: normal;
+    margin-bottom: 50px;
+    color: #000;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-top: 150px;
+}
+
+.fd-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    /*max-width: 1200px;*/
+    margin: 0 auto 50px;
+    padding: 0 20px;
+}
+
+.fd-item {
+    text-align: center;
+    transition: transform 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.5);
+    /*padding: 15px;*/
+    border-radius: 10px;
+    height: 520px;
+    overflow-y: auto;
+}
+
+.fd-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.fd-item h4 {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    margin-top: 15px;
+    color: #111;
+    line-height: 1.4;
+}
+
+.fd-item p {
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    color: #000;
+    margin-top: 8px;
+}
+
+.fd-item:hover {
+    transform: translateY(-5px);
+}
+
+.fd-item img:hover {
+    border: 2px solid #680ebd;
+}
+
+.fd-item label {
+    /*display: block;*/
+    margin: 5px 0;
+}
+
+.fd-item-options {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin: 10px 0 10px 25px;
+}
+
+.fd-item input {
+    padding: 5px;
+    width: 60px;
+}
+
+.fd-item button {
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.checkout-btn {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.checkout-btn button {
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #680ebd; /* Purple color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/*the second display section*/
+.second-display {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+/* Image container */
+.cover-image {
+    width: 50vw;
+    height: 100vh;
+}
+
+.cover-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Content Section */
+.sd-content {
+    width: 50vw;
+    height: 100vh;
+    background-color: #1f0f0f; /* Deep dark brown */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 60px;
+}
+
+.sd-content h3 {
+    font-size: 26px;
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    margin-bottom: 20px;
+    text-transform: lowercase;
+}
+
+.sd-content p {
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    line-height: 1.6;
+    color: #ddd;
+    margin-bottom: 30px;
+    max-width: 400px;
+}
+
+/* Button styling */
+.sd-content button {
+    padding: 12px 30px;
+    font-size: 15px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.sd-content button:hover {
+    background-color: #fff;
+    color: #1f0f0f;
+}
+
+/* FOOTER */
+footer {
+    background-color: #222;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: #ccc;
+}
+
+footer .contact-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+footer .contact-icons img {
+    width: 25px;
+    height: 25px;
+}
+
+/* -------------------------
+MOBILE RESPONSIVE DESIGN
+-------------------------- */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    .heading-panel {
+        /*flex-direction: column;
+        align-items: flex-start;*/
+        padding: 10px 25px;
+    }
+
+    .logo img {
+        height: 50px;
+        width: 65px;
+    }
+
+    .hamburger {
+        display: block;
+        margin-left: auto;
+        font-size: 26px;
+    }
+
+    .nav-bar {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0px;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+    }
+
+    .nav-bar.active {
+        display: block;
+    }
+
+    .nav-bar ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Dropdown positioning */
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background: transparent;
+        padding-left: 10px;
+    }
+
+    .dropdown-content a {
+        padding: 8px 0;
+        font-size: 14px;
+    }
+
+    /* Cart popup fix */
+    .cart-popup {
+        top: 100px;
+        right: 20px;
+        width: 90%;
+    }
+
+    /* Product grid responsiveness */
+    .fd-content {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /*padding: 0 10px;
+        gap: 20px;*/    
+    }
+
+    .fd-item {
+        height: auto;
+        padding-bottom: 10px;
+    }
+
+    .fd-heading h2 {
+        font-size: 36px;
+        padding-top: 120px;
+    }
+
+    .fd-item-options{
+        margin-left: 40px;
+    }
+
+    /* Second display section */
+    .second-display {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .cover-image,
+    .sd-content {
+        width: 100vw;
+        height: auto;
+    }
+
+    .cover-image img {
+        height: auto;
+    }
+
+    .sd-content {
+        padding: 40px 20px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .sd-content p {
+        max-width: 100%;
+    }
+
+    /* Footer layout */
+    
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .fd-heading h2 {
+        font-size: 28px;
+    }
+
+    .btn,
+    .checkout-btn button,
+    .sd-content button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .cart-popup {
+        top: 90px;
+    }
+}
