@@ -451,10 +451,10 @@ button:hover {
     transition: transform 0.3s ease; /* Smooth hover effect */
 }
 
-.td-item:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    border: 2px solid #680ebd; /* Border color change on hover */
-}
+/*.td-item:hover {
+    transform: translateY(-5px); /* Slight lift on hover 
+    border: 2px solid #680ebd;  Border color change on hover 
+}*/
 
 .td-item  video {
     width: 525px;
