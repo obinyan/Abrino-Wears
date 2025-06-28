@@ -456,7 +456,7 @@ button:hover {
     border: 2px solid #680ebd; /* Border color change on hover */
 }
 
-.td-item img {
+.td-item  video {
     width: 525px;
     height: auto;
     display: block;
