@@ -434,40 +434,37 @@ button:hover {
 
 .td-content {
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-    justify-content: center; /* Center items when they wrap */
-    gap: 40px; /* Space between items */
-    padding: 0 0 70px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 1rem 70px 1rem; /* Add horizontal padding for mobile spacing */
 }
 
 .td-item {
-    flex: 1; /* Allow items to grow and shrink */
-    min-width: 280px; /* Minimum width for each item before wrapping */
-    max-width: 40%; /* Max width for two items per row, with some gap */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    /*flex: 1 1 300px; Grow and shrink with a base width */
+    max-width: 100%; /* Ensure it doesn't exceed container width */
+    box-sizing: border-box;
     background-color: #fff;
     border-radius: 8px;
-    overflow: hidden; /* Ensures image corners are rounded if desired */
-    transition: transform 0.3s ease; /* Smooth hover effect */
+    overflow: hidden;
+    transition: transform 0.3s ease, border 0.3s ease;
 }
 
 /*.td-item:hover {
-    transform: translateY(-5px); /* Slight lift on hover 
-    border: 2px solid #680ebd;  Border color change on hover 
+    transform: translateY(-5px);
+    border: 2px solid #680ebd;
 }*/
 
-.td-item  video {
-    width: 525px;
+.td-item video {
+    width: 100%; /* Make video fill its container */
     height: auto;
     display: block;
-    border-radius: 4px; /* Slightly rounded corners for images */
-    object-fit: cover; /* Ensures images cover their area without distortion */
-    transition: transform 0.3s ease; /* Smooth zoom effect on image */
+    border-radius: 4px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.td-item a:hover img {
-    transform: scale(1.02); /* Slight zoom on image hover */
-}
+
 
 /*the fourth display section*/
 .fourth-display {
@@ -687,8 +684,13 @@ footer .contact-icons img {
         gap: 20px;
     }
 
-    .td-item, .fd-item {
+    .fd-item {
         max-width: 100%;
+    }
+
+    .td-item {
+        max-width: 100%; /* Two items per row on tablets */
+        height: 600px; /* Fixed height for items */
     }
 
     .second-display {
