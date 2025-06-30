@@ -56,7 +56,7 @@
             <div class="hero-section" id="hero-section">
                 <div class="hero-text">
                     <h1>ABRINO WEARS</h1>
-                    <p>It's not fashion, It's a statement</p>
+                    <p>It's not just fashion, It's a statement</p>
                     
                 </div>
                 <div class="hero-button">
@@ -130,7 +130,7 @@
                     <h2>BEST SELLERS</h2>
                 </div>
                 <div class="td-content">
-                    <div class="td-item">
+                    <div class="td-item" id="delayedVideo">
                         <video width="640" height="360"  loop muted autoplay>
                             <source src="item14.mp4" type="video/mp4">
                         </video>
@@ -206,6 +206,13 @@
     slideMessage.addEventListener('click', function () {
     // Permanently hide the slide until reload
     slideMessage.style.display = 'none';
+    });
+
+    window.addEventListener("load", function () {
+    setTimeout(() => {
+      const video = document.getElementById("delayedVideo");
+      video.play();
+    }, 5000); // 5000ms = 5 seconds
     });
     </script>
 
