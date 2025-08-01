@@ -300,9 +300,9 @@ section{
     transform: translateY(-5px);
 }
 
-.fd-item img:hover {
+/*.fd-item img:hover {
     border: 2px solid #680ebd;
-}
+}*/
 
 .fd-item label {
     /*display: block;*/
