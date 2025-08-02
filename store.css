@@ -231,8 +231,8 @@ body {
 
 /*styling section*/
 section{
-    background-color: #D2C4B1;
-    background-image: url('AYOBA-scaled.jpg');
+    background-color: #e4ded5;
+    /*background-image: url('AYOBA-scaled.jpg');*/
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -264,7 +264,7 @@ section{
 .fd-item {
     text-align: center;
     transition: transform 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.5);
+    /*background-color: rgba(255, 255, 255, 0.5);*/
     /*padding: 15px;*/
     border-radius: 10px;
     /*height: 520px;*/
