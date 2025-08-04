@@ -485,7 +485,8 @@ MOBILE RESPONSIVE DESIGN
 
     .nav-bar ul {
         flex-direction: column;
-        gap: 15px;
+        gap: 35px;
+        margin-left: 10px;
     }
 
     /* Dropdown positioning */
