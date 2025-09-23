@@ -279,6 +279,13 @@ section{
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
 
+.fd-item video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
 .fd-item h4 {
     font-size: 16px;
     font-weight: 500;
