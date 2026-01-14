@@ -57,12 +57,32 @@ body {
 }
 
 /* Header / Navbar */
+.info-panel {
+    background-color: #c12da0; /* same purple tone */
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 14px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.info-panel a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
 .heading-panel {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 50px;
-    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 50px 5px 50px;
+    background: rgba(255, 255, 255, 0.75);
     position: fixed;
     top: 0;
     left: 0;
@@ -74,8 +94,8 @@ body {
 
 /* Logo */
 .logo img {
-    height: 60px;
-    width: 75px;
+    height: 50px;
+    width: 65px;
 }
 
 /* Hamburger (for mobile) */
@@ -161,12 +181,56 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;*/
-    padding: 150px 0 0 100px ;
-    background-color: #f9f9f9;
-    /*margin-top: 100px; /* Space for fixed header */
+    /*padding: 150px 0 0 100px ;*/
+    background-color: #fff;
+    position: relative;
+    /*margin-top: 100px; /* Space for fixed header 
     background-image: url('picture1e.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center;*/
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 100;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text, .hero-button {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-image{
+    position: absolute;
+    top: 97px;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-image img{
+    width: 90%;
+    height: 82%;
+    object-fit: cover;
+}
+
+.hero-text{
+    padding: 200px 0 0 100px ;
+}
+
+.hero-button{
+    padding: 20px 0 0 100px ;
 }
 
 .hero-text h1 {
@@ -183,7 +247,7 @@ body {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     margin: 0 0 20px 0;
-    color: #444;
+    color: #000;
 }
 
 button {
@@ -257,7 +321,7 @@ button:hover {
 }
 
 .fd-heading h2 {
-    font-size: 60px;
+    font-size: 40px;
     font-weight: bold;
     font-family: "Playfair", serif;
     font-optical-sizing: auto;;
@@ -650,6 +714,22 @@ footer .contact-icons img {
         padding: 270px 0 0 0;
     }
 
+    .hero-image{
+    position: absolute;
+    top: 97px;
+    left: 10px;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+    .hero-image img{
+        width: 100%;
+        height: 70%;
+        object-fit: cover;
+        z-index: 2;
+    }
+
     .hero-text {
         text-align: center;
         padding: 0 20px;
@@ -667,8 +747,14 @@ footer .contact-icons img {
         margin: 20px 0 20px 0;
     }
 
+    .hero-button {
+        text-align: center;
+        padding: 0 20px;
+    }
+
     .hero-button button{
-        margin: 20px 0 0 98px;
+        margin: 20px auto 0 auto;
+        display: block;
     }
 
     /*.first-display, .third-display, .fourth-display {
