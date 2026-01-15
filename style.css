@@ -184,7 +184,7 @@ body {
     /*padding: 150px 0 0 100px ;*/
     background-color: #fff;
     position: relative;
-    /*margin-top: 100px; /* Space for fixed header 
+    /*margin-top: 100px;  
     background-image: url('picture1e.jpg');
     background-size: cover;
     background-position: center;*/
@@ -193,7 +193,7 @@ body {
 .hero-image {
     position: absolute;
     top: 0;
-    left: 100;
+    left: 100px;
     width: 100%;
     height: 100%;
     z-index: 1;
