@@ -671,7 +671,7 @@ footer .contact-icons img {
     .hamburger {
         display: block;
         position: absolute;
-        top: 22px;
+        top: 35px;
         right: 25px;
         font-size: 35px;
     }
@@ -738,12 +738,13 @@ footer .contact-icons img {
     .hero-text h1 {
         font-size: 40px;
         font-weight: 800;
+        color: #fff;
     }
 
     .hero-text p {
         font-size: 18px;
         font-weight: 600;
-        color: #000;
+        color: #fff;
         margin: 20px 0 20px 0;
     }
 
