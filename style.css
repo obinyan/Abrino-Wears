@@ -210,7 +210,7 @@ body {
     z-index: 2;
 }
 
-.hero-image{
+/*.hero-image{
     position: absolute;
     top: 97px;
     right: 0;
@@ -223,7 +223,7 @@ body {
     width: 90%;
     height: 82%;
     object-fit: cover;
-}
+}*/
 
 .hero-text{
     padding: 200px 0 0 100px ;
