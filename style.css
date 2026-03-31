@@ -714,13 +714,13 @@ footer .contact-icons img {
         padding: 270px 0 0 0;
     }
 
-    /*.hero-image{
-    position: absolute;
+    .hero-image{
+    /*position: absolute;
     top: 130px;
-    left: 10px;
+    left: 10px;*/
     width: 100%;
     height: 100vh;
-    overflow: hidden;*/
+    overflow: hidden;
 }
 
     .hero-image img{
