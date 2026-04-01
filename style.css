@@ -302,6 +302,67 @@ button:hover {
 
 /*the first display section*/
 /* Container */
+/* Section Wrapper */
+.updated-fd {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+/* Heading */
+.ufd-heading {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+/* Content Grid */
+.ufd-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Card */
+.content-1 {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+.content-1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Image */
+.c-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Label */
+.c-label {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.c-label:hover {
+    color: #007BFF;
+}
+
+
 .first-display {
     padding: 80px 50px;
     background-color: #fff;
@@ -667,6 +728,15 @@ footer .contact-icons img {
 
 
 /* Responsive */
+/* Tablet */
+@media (max-width: 992px) {
+    .ufd-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
 @media (max-width: 768px) {
     .hamburger {
         display: block;
@@ -761,6 +831,19 @@ footer .contact-icons img {
     /*.first-display, .third-display, .fourth-display {
         padding: 40px 20px;
     }*/
+
+     .ufd-content {
+        grid-template-columns: 1fr;
+    }
+
+    .ufd-heading {
+        font-size: 22px;
+    }
+
+    .c-image {
+        height: 200px;
+    }
+}    
 
     .fd-heading h2, .td-heading h2 {
         font-size: 2rem;
