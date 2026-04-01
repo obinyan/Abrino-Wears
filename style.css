@@ -58,7 +58,7 @@ body {
 
 /* Header / Navbar */
 .info-panel {
-    background-color: #c12da0; /* same purple tone */
+    background-color: #1A0F05; /* same purple tone */
     color: white;
     text-align: center;
     padding: 8px 0;
@@ -732,19 +732,19 @@ footer .contact-icons img {
 
     .hero-text {
         text-align: center;
-        padding: 0 20px;
+        padding: 50px 20px 0 20px;
     }
 
     .hero-text h1 {
         font-size: 40px;
         font-weight: 800;
-        color: #fff;
+        color: #000;
     }
 
     .hero-text p {
         font-size: 18px;
         font-weight: 600;
-        color: #fff;
+        color: #000;
         margin: 20px 0 20px 0;
     }
 
