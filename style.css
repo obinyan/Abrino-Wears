@@ -841,7 +841,7 @@ footer .contact-icons img {
     }
 
     .c-image {
-        height: 400px;
+        height: auto;
     }
 }    
 
