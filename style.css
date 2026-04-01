@@ -343,7 +343,7 @@ button:hover {
 /* Image */
 .c-image {
     width: 100%;
-    height: auto;
+    height: 450px;
     object-fit: cover;
 }
 
@@ -841,7 +841,7 @@ footer .contact-icons img {
     }
 
     .c-image {
-        height: auto;
+        height: 450px;
     }
 }    
 
