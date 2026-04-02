@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="blog.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -25,57 +27,55 @@
 </head>
 <body>
 
-    <!-- HEADER: info panel only, no logo or nav as requested -->
-    <header>
-        <div class="info-panel">
-            <a href="#">Get 10% off on your first three(3) orders</a>
-        </div>
-        <div class="heading-panel" id="heading-panel">
-                <div class="logo">
-                    <img src="ABRINO LOGO.jpeg copy.png" alt="logo">
-                </div>
-                <div class="hamburger" id="hamburger">
-                    &#9776;
-                </div>
-                <div class="nav-bar">
-                    <ul>
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="store.html">Shop</a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/abrinowears_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">About</a>
-                        </li>
-                        <li>
-                            <div class="dropdown">
-                                <p>Contact</p>
-                                <div class="dropdown-content">
-                                    <a href="tel:+2347063719207" target="_blank">Phone</a>
-                                    <a href="">E-mail</a>
-                                    <a href="https://wa.me/2347063719207" target="_blank">Help center</a>
-                                    <a href="#footer">Socials</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="blog.html">Blog</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="oder-icons">
-                    <img src="wishlist.png" alt="wishlist">
-                    <img src="shopping-cart.png" alt="cart">
-                </div>
-            </div>
-    </header>
+    <!-- INFO PANEL -->
+    <div class="info-panel">
+        <a href="#">Get 10% off on your first three(3) orders</a>
+    </div>
 
-    <!-- BLOG HERO -->
-    <div class="blog-hero">
-        <p class="hero-tag">Abrino Wears &middot; Nigerian Fashion Editorial</p>
-        <h1>The Living <em>Art</em><br>of Nigerian Dress</h1>
-        <p>Celebrating Aso-Oke, Ankara, Agbada and every thread that tells our story &mdash; curated fresh from the fashion world.</p>
+    <!-- HEADER / NAV — same structure as homepage -->
+    <div class="heading-panel" id="heading-panel">
+        <div class="logo">
+            <img src="ABRINO LOGO.jpeg copy.png" alt="logo">
+        </div>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <div class="nav-bar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="store.html">Shop</a></li>
+                <li>
+                    <a href="https://www.instagram.com/abrinowears_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">About</a>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <p>Contact</p>
+                        <div class="dropdown-content">
+                            <a href="tel:+2347063719207" target="_blank">Phone</a>
+                            <a href="">E-mail</a>
+                            <a href="https://wa.me/2347063719207" target="_blank">Help center</a>
+                            <a href="#footer">Socials</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <div class="oder-icons">
+            <img src="wishlist.png" alt="wishlist">
+            <img src="shopping-cart.png" alt="cart">
+        </div>
+    </div>
+
+    <!-- BLOG HERO — same layout language as homepage hero -->
+    <div class="blog-hero-section">
+        <div class="blog-hero-bg"></div>
+        <div class="blog-hero-text">
+            <p class="blog-hero-tag">Abrino Wears &middot; Nigerian Fashion Editorial</p>
+            <h1>The Living <em>Art</em><br>of Nigerian Dress</h1>
+            <p class="blog-hero-sub">Celebrating Aso-Oke, Ankara, Agbada and every thread that tells our story</p>
+        </div>
+        <div class="blog-hero-button">
+            <button onclick="document.getElementById('blog-content').scrollIntoView({behavior:'smooth'})">Read Stories</button>
+        </div>
     </div>
 
     <!-- FILTER BAR -->
@@ -91,8 +91,8 @@
         </div>
     </div>
 
-    <!-- MAIN PAGE -->
-    <div class="page-wrapper">
+    <!-- MAIN CONTENT -->
+    <div class="page-wrapper" id="blog-content">
         <div class="layout-with-sidebar">
 
             <main id="main-content">
@@ -135,7 +135,7 @@
                         <span class="swatch-name">Kente</span>
                     </div>
                     <div class="style-swatch" onclick="filterTopic(null,'Aso-Oke weave Nigerian fashion')">
-                        <div class="swatch-dot aso-oke"></div>
+                        <div class="swatch-dot aso-oke-sw"></div>
                         <span class="swatch-name">Aso-Oke</span>
                     </div>
                     <div class="style-swatch" onclick="filterTopic(null,'Adire indigo fabric Nigeria')">
@@ -149,7 +149,7 @@
                 </div>
                 <div class="sidebar-widget">
                     <div class="sidebar-title">About This Blog</div>
-                    <p style="font-size:0.85rem;line-height:1.7;color:var(--text-muted);">Stories are curated live from the internet using AI, bringing you the freshest content from the world of Nigerian fashion &mdash; automatically, every time you visit.</p>
+                    <p style="font-size:0.85rem;line-height:1.7;color:#7A5C40;">Stories are curated live from the internet using AI, bringing you the freshest content from the world of Nigerian fashion &mdash; automatically, every time you visit.</p>
                 </div>
             </aside>
 
@@ -161,21 +161,36 @@
         <div class="reader-modal" id="reader-modal">
             <button class="reader-close" onclick="closeReaderBtn()">&#x2715; Close</button>
             <div class="reader-header">
-                <div id="reader-cat" style="color:var(--gold-light);font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.6rem;"></div>
-                <h2 id="reader-title" style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:#FAF6EE;line-height:1.15;"></h2>
+                <div id="reader-cat"></div>
+                <h2 id="reader-title"></h2>
             </div>
             <div class="reader-body" id="reader-body"></div>
         </div>
     </div>
 
-    <!-- BLOG FOOTER -->
-    <footer class="blog-footer">
-        <p>&copy; 2026 Abrino Wears. Fashion content curated by AI from across the web.</p>
+    <!-- FOOTER — same structure as homepage footer -->
+    <footer id="footer">
+        <div class="copyright">
+            <p>&copy; 2026 Abrino Wears. All rights reserved</p>
+        </div>
+        <div class="contact-icons">
+            <a href="tel:+2347063719207" target="_blank" rel="noopener">
+                <img src="phone.png" alt="Phone">
+            </a>
+            <a href="https://wa.me/2347063719207" target="_blank" rel="noopener">
+                <img src="WhatsApp 2.png" alt="WhatsApp">
+            </a>
+            <a href="https://www.instagram.com/abrinowears_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">
+                <img src="IG logo 2.png" alt="Instagram">
+            </a>
+            <a href="https://www.tiktok.com/@abrinowears?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">
+                <img src="TikTok.png" alt="TikTok">
+            </a>
+        </div>
     </footer>
 
-    <!-- JAVASCRIPT (embedded) -->
     <script>
-    var FABRIC_PATTERNS = ['ankara','kente','adire','aso-oke','brocade','george'];
+    var FABRIC_PATTERNS = ['ankara','kente','adire','aso-oke-p','brocade','george'];
     var FABRIC_NAMES    = ['Ankara Print','Kente Cloth','Adire Indigo','Aso-Oke Weave','Brocade','George Fabric'];
     var CATEGORIES      = ['Native Wear','Ankara','Aso-Oke','Contemporary','Bridal','Street Style','Designer Spotlight','Trend Report'];
     var currentTopic    = 'Nigerian fashion styles trends native wear 2025';
@@ -251,7 +266,7 @@
             '<h2 class="article-title">'+escHtml(feat.title)+'</h2>'+
             '<p class="article-excerpt">'+escHtml(feat.excerpt)+'</p>'+
             '<div class="article-meta">'+escHtml(feat.date||'')+' &nbsp;&middot;&nbsp; '+escHtml(feat.readTime||'5 min read')+'</div>'+
-            '<button class="read-more" onclick="openReader(0)">Read Story &rarr;</button>'+
+            '<button class="read-more-btn" onclick="openReader(0)">Read Story &rarr;</button>'+
             '</div></div>';
 
         var cards='';
@@ -265,7 +280,7 @@
                 '<p class="card-excerpt">'+escHtml(a.excerpt)+'</p>'+
                 '<div class="card-footer">'+
                 '<span class="article-meta">'+escHtml(a.date||'')+' &middot; '+escHtml(a.readTime||'4 min read')+'</span>'+
-                '<button class="read-more" style="margin-top:0;" onclick="openReader('+(i+1)+')">Read &rarr;</button>'+
+                '<button class="read-more-btn small" onclick="openReader('+(i+1)+')">Read &rarr;</button>'+
                 '</div></div></div>';
         }
         document.getElementById('articles-area').innerHTML='<div class="articles-grid">'+cards+'</div>';
@@ -368,20 +383,6 @@
         } else {
             header.classList.remove('scrolled');
         }
-    });
-
-    const slideMessage = document.querySelector('.slide-message');
-
-    slideMessage.addEventListener('click', function () {
-    // Permanently hide the slide until reload
-    slideMessage.style.display = 'none';
-    });
-
-    window.addEventListener("load", function () {
-    setTimeout(() => {
-      const video = document.getElementById("delayedVideo");
-      video.play();
-    }, 5000); // 5000ms = 5 seconds
     });
 
     loadContent();
