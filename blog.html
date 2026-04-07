@@ -221,39 +221,16 @@
     }
 
     async function fetchArticlesFromAI(topic){
-        var prompt='You are a fashion journalist for Abrino Wears, a Nigerian fashion brand.'+
-            ' Search the web and write 5 unique engaging blog article summaries about: "'+topic+'".'+
-            ' Each article must cover REAL Nigerian fashion trends, designers, or fabrics (Ankara, Aso-Oke, Adire, Agbada, Isiagu, George) from recent events.'+
-            ' Return ONLY a valid JSON array with exactly 5 objects. No markdown, no preamble, just raw JSON.'+
-            ' Each object must have exactly these keys:'+
-            ' "title" (catchy headline max 12 words),'+
-            ' "category" (one of: Native Wear, Ankara, Aso-Oke, Contemporary, Bridal, Street Style, Designer Spotlight, Trend Report),'+
-            ' "excerpt" (2-sentence teaser 40-55 words),'+
-            ' "body" (HTML with 3-4 <p> paragraphs and 1-2 <h2> subheadings, 300-350 words, reference real Nigerian fashion details),'+
-            ' "readTime" (e.g. "4 min read"),'+
-            ' "date" (recent date e.g. "June 2025").';
-
-        var res = await fetch('/api/blog', {
-            method:'POST',
-            headers:{'Content-Type':'application/json'},
-            body:JSON.stringify({
-                model:'claude-sonnet-4-20250514',
-                max_tokens:4000,
-                tools:[{type:'web_search_20250305',name:'web_search'}],
-                messages:[{role:'user',content:prompt}]
-            })
-        });
-        if(!res.ok) throw new Error('API '+res.status);
-        var data = await res.json();
-        var txt='';
-        for(var i=0;i<data.content.length;i++){
-            if(data.content[i].type==='text') txt+=data.content[i].text;
-        }
-        var clean=txt.replace(/```json|```/g,'').trim();
-        var s=clean.indexOf('['), e=clean.lastIndexOf(']');
-        if(s===-1||e===-1) throw new Error('No JSON array');
-        return JSON.parse(clean.slice(s,e+1));
-    }
+    var res = await fetch('/api/blog', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ topic: topic })
+    });
+    if(!res.ok) throw new Error('API ' + res.status);
+    var data = await res.json();
+    if(!data.articles) throw new Error('No articles returned');
+    return data.articles;
+}
 
     function renderArticles(articles){
         if(!articles||!articles.length) return;
