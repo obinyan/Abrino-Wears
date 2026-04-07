@@ -233,7 +233,7 @@
             ' "readTime" (e.g. "4 min read"),'+
             ' "date" (recent date e.g. "June 2025").';
 
-        var res = await fetch('https://api.anthropic.com/v1/messages',{
+        var res = await fetch('/api/blog', {
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({
