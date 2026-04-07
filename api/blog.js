@@ -6,6 +6,10 @@ export default async function handler(req, res) {
     try {
         const { topic } = req.body;
 
+        if (!process.env.GEMINI_API_KEY) {
+            return res.status(500).json({ error: 'GEMINI_API_KEY is not set' });
+        }
+
         const prompt = `You are a fashion journalist for Abrino Wears, a Nigerian fashion brand.
 Write 5 unique engaging blog article summaries about: "${topic}".
 Each article must cover REAL Nigerian fashion trends, designers, or fabrics (Ankara, Aso-Oke, Adire, Agbada, Isiagu, George) from recent events.
@@ -35,22 +39,25 @@ Each object must have exactly these keys:
 
         const data = await response.json();
 
-        // Extract the text from Gemini's response
+        // Return full Gemini response if something went wrong
+        if (!response.ok) {
+            return res.status(500).json({ error: 'Gemini API error', geminiResponse: data });
+        }
+
         const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
 
-        // Clean and parse the JSON array
         const clean = text.replace(/```json|```/g, '').trim();
         const start = clean.indexOf('[');
         const end = clean.lastIndexOf(']');
 
         if (start === -1 || end === -1) {
-            return res.status(500).json({ error: 'No JSON array found in response', raw: text });
+            return res.status(500).json({ error: 'No JSON array found', raw: text });
         }
 
         const articles = JSON.parse(clean.slice(start, end + 1));
         res.status(200).json({ articles });
 
     } catch (error) {
-        res.status(500).json({ error: 'Failed to fetch from Gemini', details: error.message });
+        res.status(500).json({ error: 'Server error', details: error.message });
     }
 }
