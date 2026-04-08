@@ -221,14 +221,34 @@
     }
 
     async function fetchArticlesFromAI(topic){
+
+    // ✅ Check localStorage first
+    var cached = localStorage.getItem(topic);
+
+    if (cached) {
+        try {
+            return JSON.parse(cached);
+        } catch (e) {
+            localStorage.removeItem(topic); // clear bad cache
+        }
+    }
+
+    // 🔄 If no cache → call API
     var res = await fetch('/api/blog', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({ topic: topic })
     });
+
     if(!res.ok) throw new Error('API ' + res.status);
+
     var data = await res.json();
+
     if(!data.articles) throw new Error('No articles returned');
+
+    // ✅ Save to localStorage
+    localStorage.setItem(topic, JSON.stringify(data.articles));
+
     return data.articles;
 }
 
