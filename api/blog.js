@@ -6,8 +6,8 @@ export default async function handler(req, res) {
     try {
         const { topic } = req.body;
 
-        if (!process.env.GEMINI_API_KEY) {
-            return res.status(500).json({ error: 'GEMINI_API_KEY is not set' });
+        if (!process.env.Abrinowears_blog) {
+            return res.status(500).json({ error: 'Abrinowears_blog is not set' });
         }
 
         const prompt = `You are a fashion journalist for Abrino Wears, a Nigerian fashion brand.
@@ -23,7 +23,7 @@ Each object must have exactly these keys:
 "date" (recent date e.g. "June 2025").`;
 
         const response = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.Abrinowears_blog}`,
             {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
