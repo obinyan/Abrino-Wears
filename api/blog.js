@@ -6,21 +6,29 @@ export default async function handler(req, res) {
     try {
         const { topic } = req.body;
 
+        if (!topic) {
+    return res.status(400).json({ error: 'Topic is required' });
+}
+
         if (!process.env.Abrinowears_blog) {
             return res.status(500).json({ error: 'Abrinowears_blog is not set' });
         }
 
-        const prompt = `You are a fashion journalist for Abrino Wears, a Nigerian fashion brand.
-Write 5 unique engaging blog article summaries about: "${topic}".
-Each article must cover REAL Nigerian fashion trends, designers, or fabrics (Ankara, Aso-Oke, Adire, Agbada, Isiagu, George) from recent events.
-Return ONLY a valid JSON array with exactly 5 objects. No markdown, no preamble, just raw JSON.
-Each object must have exactly these keys:
-"title" (catchy headline max 12 words),
-"category" (one of: Native Wear, Ankara, Aso-Oke, Contemporary, Bridal, Street Style, Designer Spotlight, Trend Report),
-"excerpt" (2-sentence teaser 40-55 words),
-"body" (HTML with 3-4 <p> paragraphs and 1-2 <h2> subheadings, 300-350 words, reference real Nigerian fashion details),
-"readTime" (e.g. "4 min read"),
-"date" (recent date e.g. "June 2025").`;
+        const prompt = `You are a fashion writer for a Nigerian brand.
+
+Write 3 engaging blog articles about: "${topic}".
+
+Focus on Nigerian fashion (Ankara, Aso-Oke, Adire, Agbada, Isiagu, George).
+
+Return ONLY a JSON array with 3 objects.
+
+Each object must have:
+"title" (max 10 words),
+"category" (Native Wear, Ankara, Aso-Oke, Contemporary, Bridal, Street Style, Designer Spotlight, Trend Report),
+"excerpt" (2 sentences, 30-40 words),
+"body" (HTML with 2 <p> paragraphs, 120-150 words),
+"readTime",
+"date".`;
 
         const response = await fetch(
             `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.Abrinowears_blog}`,
@@ -30,8 +38,8 @@ Each object must have exactly these keys:
                 body: JSON.stringify({
                     contents: [{ parts: [{ text: prompt }] }],
                     generationConfig: {
-                        temperature: 0.8,
-                        maxOutputTokens: 4000
+                        temperature: 0.6,
+                        maxOutputTokens: 1200
                     }
                 })
             }
@@ -55,7 +63,15 @@ Each object must have exactly these keys:
         }
 
         const articles = JSON.parse(clean.slice(start, end + 1));
-        res.status(200).json({ articles });
+
+if (!Array.isArray(articles) || articles.length !== 3) {
+    return res.status(500).json({
+        error: 'Invalid article count',
+        raw: articles
+    });
+}
+
+res.status(200).json({ articles });
 
     } catch (error) {
         res.status(500).json({ error: 'Server error', details: error.message });
