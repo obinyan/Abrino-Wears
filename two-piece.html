@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 Pieces – Abrino Wears</title>
+    <link rel="stylesheet" href="store.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <style>
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            padding: 20px 20px 0;
+            flex-wrap: wrap;
+        }
+        .category-tabs a {
+            padding: 10px 24px;
+            border: 1.5px solid #000;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: "Inter", sans-serif;
+            color: #000;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+        .category-tabs a:hover { background: #000; color: #fff; }
+        .category-tabs a.active { background: #000; color: #fff; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="info-panel">
+            <a href="#">Get 10% discount when you order three or more!</a>
+        </div>
+        <div class="heading-panel" id="heading-panel">
+            <div class="logo">
+                <img src="ABRINO LOGO.jpeg copy.png" alt="logo">
+            </div>
+            <div class="hamburger" id="hamburger">&#9776;</div>
+            <div class="nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="store.html">Shop</a></li>
+                    <li><a href="https://www.instagram.com/abrinowears_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">About</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <p>Contact</p>
+                            <div class="dropdown-content">
+                                <a href="tel:+2347063719207">Phone</a>
+                                <a href="">E-mail</a>
+                                <a href="https://wa.me/2347063719207" target="_blank">Help center</a>
+                                <a href="#footer">Socials</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="oder-icons" id="cartIcon">
+                <div class="cart-container">
+                    <a href="cart.html"><img src="shopping-cart.png" alt="cart"></a>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="store" id="productList">
+            <div class="fd-heading">
+                <h2>2 PIECES</h2>
+            </div>
+
+            <div class="category-tabs">
+                <a href="two-piece.html" class="active">2 Pieces</a>
+                <a href="natives.html">Tailored Natives</a>
+                <a href="agbada.html">Tailored Agbada</a>
+                <a href="store.html">View All</a>
+            </div>
+
+            <div class="fd-content" style="margin-top: 40px;">
+                <div class="fd-item">
+                    <a href=""><img src="item1.jpg" alt="2 Pieces NO_001"></a>
+                    <h4>2 Pieces NO_001</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item2.jpg" alt="2 Pieces NO_002"></a>
+                    <h4>2 Pieces NO_002</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item3.jpg" alt="2 Pieces NO_003"></a>
+                    <h4>2 Pieces NO_003</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item4.jpg" alt="2 Pieces NO_004"></a>
+                    <h4>2 Pieces NO_004</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item5.jpg" alt="2 Pieces NO_005"></a>
+                    <h4>2 Pieces NO_005</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item6.jpg" alt="2 Pieces NO_006"></a>
+                    <h4>2 Pieces NO_006</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item7.jpg" alt="2 Pieces NO_007"></a>
+                    <h4>2 Pieces NO_007</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item9.jpg" alt="2 Pieces NO_009"></a>
+                    <h4>2 Pieces NO_009</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item21.jpg" alt="2 Pieces NO_010"></a>
+                    <h4>2 Pieces NO_010</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item27.jpg" alt="2 Pieces NO_011"></a>
+                    <h4>2 Pieces NO_011</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="checkout-btn">
+            <a href="cart.html"><button>View Cart & Checkout</button></a>
+        </div>
+
+        <div class="second-display">
+            <div class="cover-image">
+                <img src="cover image.jpeg" alt="cover image">
+            </div>
+            <div class="sd-content">
+                <h3>for the occasion</h3>
+                <p>Having a special event and need something custom just for you, we've got you covered.</p>
+                <a href="https://wa.me/2347063719207" target="_blank"><button>Book Now</button></a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="copyright">
+            <p>&copy; 2026 Abrino Wears. All rights reserved</p>
+        </div>
+        <div class="contact-icons">
+            <a href="tel:+2347063719207" target="_blank" rel="noopener"><img src="phone.png" alt="Phone"></a>
+            <a href="https://wa.me/2347063719207" target="_blank" rel="noopener"><img src="WhatsApp 2.png" alt="WhatsApp"></a>
+            <a href="https://www.instagram.com/abrinowears_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><img src="IG logo 2.png" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/@abrinowears?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener"><img src="TikTok.png" alt="TikTok"></a>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navBar = document.querySelector('.nav-bar');
+        hamburger.addEventListener('click', () => navBar.classList.toggle('active'));
+
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.heading-panel');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        function addToCart(button) {
+            const item = button.closest(".fd-item");
+            const name = item.querySelector("h4").innerText;
+            const priceText = item.querySelector("p").innerText.replace(/[₦,]/g, '');
+            const price = parseInt(priceText);
+            const sizeInput = item.querySelector('input[name="size"]');
+            const size = sizeInput ? sizeInput.value.trim() : '';
+            const qtyInput = item.querySelector('input[name="qty"]');
+            const qty = qtyInput ? parseInt(qtyInput.value) : 0;
+            if (qty < 1) { alert("Please enter a valid quantity."); return; }
+            CartUtils.addItem(name, price, size, qty);
+            alert(`${name} added to cart!`);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => CartUtils.updateBadge());
+    </script>
+</body>
+</html>

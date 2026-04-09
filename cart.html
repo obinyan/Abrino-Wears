@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart – Abrino Wears</title>
+    <link rel="stylesheet" href="store.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <style>
+        .cart-page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 160px 20px 80px;
+            min-height: 80vh;
+        }
+        .cart-page h2 {
+            font-family: "Playfair", serif;
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .cart-empty {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .cart-empty p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .cart-empty a {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #000;
+            color: #fff;
+            border-radius: 25px;
+            font-size: 15px;
+            font-family: "Inter", sans-serif;
+            text-decoration: none;
+        }
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+        .cart-table th {
+            text-align: left;
+            padding: 12px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-table td {
+            padding: 20px 16px;
+            border-bottom: 1px solid #eee;
+            font-size: 15px;
+            vertical-align: middle;
+        }
+        .cart-table .item-name {
+            font-weight: 500;
+        }
+        .cart-table .item-size {
+            font-size: 13px;
+            color: #777;
+            margin-top: 4px;
+        }
+        .qty-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .qty-control button {
+            width: 28px;
+            height: 28px;
+            border: 1px solid #ccc;
+            background: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            transition: background 0.2s;
+        }
+        .qty-control button:hover { background: #f0f0f0; }
+        .qty-control span {
+            min-width: 24px;
+            text-align: center;
+            font-weight: 500;
+        }
+        .remove-btn {
+            background: none;
+            border: none;
+            color: #999;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 4px;
+            transition: color 0.2s;
+        }
+        .remove-btn:hover { color: #e00; }
+        .cart-summary {
+            background: #f8f5f2;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 420px;
+            margin-left: auto;
+        }
+        .cart-summary h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-family: "Inter", sans-serif;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+            margin-bottom: 12px;
+            color: #444;
+        }
+        .summary-row.total {
+            font-size: 18px;
+            font-weight: 600;
+            color: #000;
+            border-top: 1px solid #ddd;
+            padding-top: 14px;
+            margin-top: 8px;
+        }
+        .summary-note {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+        .discount-badge {
+            display: inline-block;
+            background: #1A0F05;
+            color: #fff;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+        .checkout-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 20px;
+            background: #25D366;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: "Inter", sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .btn-whatsapp:hover { background: #1da851; }
+        .btn-online {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 20px;
+            background: #000;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: "Inter", sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .btn-online:hover { background: #333; }
+        .continue-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .continue-link a {
+            color: #555;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .cart-page h2 { font-size: 32px; }
+            .cart-table th:nth-child(3),
+            .cart-table td:nth-child(3) { display: none; }
+            .cart-summary { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="info-panel">
+            <a href="#">Get 10% discount when you order three or more!</a>
+        </div>
+        <div class="heading-panel" id="heading-panel">
+            <div class="logo">
+                <img src="ABRINO LOGO.jpeg copy.png" alt="logo">
+            </div>
+            <div class="hamburger" id="hamburger">&#9776;</div>
+            <div class="nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="store.html">Shop</a></li>
+                    <li><a href="https://www.instagram.com/abrinowears_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">About</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <p>Contact</p>
+                            <div class="dropdown-content">
+                                <a href="tel:+2347063719207">Phone</a>
+                                <a href="">E-mail</a>
+                                <a href="https://wa.me/2347063719207" target="_blank">Help center</a>
+                                <a href="#footer">Socials</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="oder-icons" id="cartIcon">
+                <div class="cart-container">
+                    <a href="cart.html"><img src="shopping-cart.png" alt="cart"></a>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section style="background-color: #e4ded5; min-height: 100vh;">
+        <div class="cart-page">
+            <h2>YOUR CART</h2>
+            <div id="cartContent"></div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="copyright">
+            <p>&copy; 2026 Abrino Wears. All rights reserved</p>
+        </div>
+        <div class="contact-icons">
+            <a href="tel:+2347063719207" target="_blank" rel="noopener"><img src="phone.png" alt="Phone"></a>
+            <a href="https://wa.me/2347063719207" target="_blank" rel="noopener"><img src="WhatsApp 2.png" alt="WhatsApp"></a>
+            <a href="https://www.instagram.com/abrinowears_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><img src="IG logo 2.png" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/@abrinowears?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener"><img src="TikTok.png" alt="TikTok"></a>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navBar = document.querySelector('.nav-bar');
+        hamburger.addEventListener('click', () => navBar.classList.toggle('active'));
+        window.addEventListener('scroll', () => {
+            document.querySelector('.heading-panel').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        function renderCart() {
+            const cart = CartUtils.getCart();
+            const container = document.getElementById('cartContent');
+            CartUtils.updateBadge();
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="cart-empty">
+                        <p>Your cart is empty.</p>
+                        <a href="store.html">Continue Shopping</a>
+                    </div>`;
+                return;
+            }
+
+            const total = CartUtils.getTotal();
+            const itemCount = cart.reduce((s, i) => s + i.qty, 0);
+            const hasDiscount = itemCount >= 3;
+            const discountAmount = hasDiscount ? Math.round(total * 0.10) : 0;
+            const finalTotal = total - discountAmount;
+
+            let rows = cart.map(item => `
+                <tr>
+                    <td>
+                        <div class="item-name">${item.name}</div>
+                        ${item.size ? `<div class="item-size">Size: ${item.size}</div>` : ''}
+                    </td>
+                    <td>₦${item.price.toLocaleString()}</td>
+                    <td>
+                        <div class="qty-control">
+                            <button onclick="changeQty(${item.id}, -1)">−</button>
+                            <span>${item.qty}</span>
+                            <button onclick="changeQty(${item.id}, 1)">+</button>
+                        </div>
+                    </td>
+                    <td>₦${(item.price * item.qty).toLocaleString()}</td>
+                    <td><button class="remove-btn" onclick="removeItem(${item.id})" title="Remove">×</button></td>
+                </tr>
+            `).join('');
+
+            container.innerHTML = `
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Subtotal</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>${rows}</tbody>
+                </table>
+
+                <div class="cart-summary">
+                    <h3>Order Summary</h3>
+                    ${hasDiscount ? `<span class="discount-badge">10% discount applied!</span>` : `<p class="summary-note">Add ${3 - itemCount} more item(s) to get 10% off</p>`}
+                    <div class="summary-row">
+                        <span>Subtotal (${itemCount} item${itemCount !== 1 ? 's' : ''})</span>
+                        <span>₦${total.toLocaleString()}</span>
+                    </div>
+                    ${hasDiscount ? `
+                    <div class="summary-row" style="color: green;">
+                        <span>10% Discount</span>
+                        <span>−₦${discountAmount.toLocaleString()}</span>
+                    </div>` : ''}
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span>₦${finalTotal.toLocaleString()}</span>
+                    </div>
+
+                    <div class="checkout-options">
+                        <a href="checkout.html" class="btn-online">
+                            💳 Checkout Online
+                        </a>
+                        <button class="btn-whatsapp" onclick="checkoutWhatsApp()">
+                            📱 Order via WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="continue-link">
+                    <a href="store.html">← Continue Shopping</a>
+                </div>
+            `;
+        }
+
+        function changeQty(id, delta) {
+            const cart = CartUtils.getCart();
+            const item = cart.find(i => i.id === id);
+            if (!item) return;
+            const newQty = item.qty + delta;
+            if (newQty < 1) { removeItem(id); return; }
+            CartUtils.updateQty(id, newQty);
+            renderCart();
+        }
+
+        function removeItem(id) {
+            CartUtils.removeItem(id);
+            renderCart();
+        }
+
+        function checkoutWhatsApp() {
+            const cart = CartUtils.getCart();
+            if (cart.length === 0) return;
+            const total = CartUtils.getTotal();
+            const itemCount = cart.reduce((s, i) => s + i.qty, 0);
+            const hasDiscount = itemCount >= 3;
+            const discountAmount = hasDiscount ? Math.round(total * 0.10) : 0;
+            const finalTotal = total - discountAmount;
+
+            let message = "Hello! I'd like to place an order:\n\n";
+            cart.forEach(item => {
+                const sizeDisplay = item.size ? ` (Size: ${item.size})` : '';
+                message += `• ${item.name}${sizeDisplay} x${item.qty} = ₦${(item.price * item.qty).toLocaleString()}\n`;
+            });
+            if (hasDiscount) message += `\nDiscount (10%): −₦${discountAmount.toLocaleString()}`;
+            message += `\n\nTotal: ₦${finalTotal.toLocaleString()}`;
+
+            window.open(`https://wa.me/2347063719207?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        document.addEventListener('DOMContentLoaded', renderCart);
+    </script>
+</body>
+</html>

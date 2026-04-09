@@ -1,580 +1,507 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Abrino Wears Store</title>
-        <link rel="stylesheet" href="store.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-        <!-- Open Graph meta tags -->
-        <meta property="og:title" content="Abrino Wears - Your Trusted Fashion Brand" />
-        <meta property="og:description" content="Discover stylish and affordable fashion for everyone at Abrino Wears." />
-        <meta property="og:image" content="https://abrinowears.com.ng/images/abrino-thumbnail.jpg" />
-        <meta property="og:url" content="https://abrinowears.com.ng" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Abrino Wears" />
-    </head>
-    <body>
-        <header>
-            <div class="info-panel">
-                <a href="#">Get 10% discount when you order three or more!</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrino Wears Store</title>
+    <link rel="stylesheet" href="store.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Abrino Wears - Your Trusted Fashion Brand" />
+    <meta property="og:description" content="Discover stylish and affordable fashion for everyone at Abrino Wears." />
+    <meta property="og:image" content="https://abrinowears.com.ng/images/abrino-thumbnail.jpg" />
+    <meta property="og:url" content="https://abrinowears.com.ng" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Abrino Wears" />
+    <style>
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            padding: 20px 20px 0;
+            flex-wrap: wrap;
+        }
+        .category-tabs a {
+            padding: 10px 24px;
+            border: 1.5px solid #000;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: "Inter", sans-serif;
+            color: #000;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+        .category-tabs a:hover { background: #000; color: #fff; }
+        .category-tabs a.active { background: #000; color: #fff; }
+
+        .category-divider {
+            font-family: "Playfair", serif;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-align: center;
+            padding: 50px 0 10px;
+            color: #000;
+        }
+        .category-divider span {
+            display: inline-block;
+            border-bottom: 2px solid #000;
+            padding-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="info-panel">
+            <a href="#">Get 10% discount when you order three or more!</a>
+        </div>
+        <div class="heading-panel" id="heading-panel">
+            <div class="logo">
+                <img src="ABRINO LOGO.jpeg copy.png" alt="logo">
             </div>
-            <div class="heading-panel" id="heading-panel">
-                <div class="logo">
-                    <img src="ABRINO LOGO.jpeg copy.png" alt="logo">
-                </div>
-                <div class="hamburger" id="hamburger">
-                    &#9776;
-                </div>
-                <div class="nav-bar">
-                    <ul>
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="store.html">Shop</a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/abrinowears_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">About</a>
-                        </li>
-                        <li>
-                            <div class="dropdown">
-                                <p>Contact</p>
-                                <div class="dropdown-content">
-                                    <a href="tel:+2347063719207">Phone</a>
-                                    <a href="">E-mail</a>
-                                    <a href="https://wa.me/2347063719207" target="_blank">Help center</a>
-                                    <a href="#footer">Socials</a>
-                                </div>
+            <div class="hamburger" id="hamburger">
+                &#9776;
+            </div>
+            <div class="nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="store.html">Shop</a></li>
+                    <li><a href="https://www.instagram.com/abrinowears_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">About</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <p>Contact</p>
+                            <div class="dropdown-content">
+                                <a href="tel:+2347063719207">Phone</a>
+                                <a href="">E-mail</a>
+                                <a href="https://wa.me/2347063719207" target="_blank">Help center</a>
+                                <a href="#footer">Socials</a>
                             </div>
-                        </li>
-                        <li>
-                            <a href="blog.html">Blog</a>
-                        </li>
-                    </ul>
+                        </div>
+                    </li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="oder-icons" id="cartIcon">
+                <div class="cart-container">
+                    <a href="cart.html"><img src="shopping-cart.png" alt="cart"></a>
+                    <span class="cart-count" id="cartCount">0</span>
                 </div>
-                <div class="oder-icons" id="cartIcon">
-                    <!--<img src="wishlist.png" alt="wishlist">-->
-                    <div class="cart-container">
-                        <img src="shopping-cart.png" alt="cart">
-                        <span class="cart-count" id="cartCount">0</span>
-                    </div>
-                </div>
+            </div>
+        </div>
+    </header>
 
-                <!-- Cart dropdown -->
-                <div class="cart-popup" id="cartPopup">
-                    <h4>Your Cart</h4>
-                    <ul id="cartItems"></ul>
-                    <button onclick="checkout()">Checkout via WhatsApp</button>
-                </div>
+    <section>
+        <div class="store" id="productList">
+            <div class="fd-heading">
+                <h2>OUR STORE</h2>
+            </div>
 
+            <!-- Category navigation tabs -->
+            <div class="category-tabs">
+                <a href="store.html" class="active">View All</a>
+                <a href="two-piece.html">2 Pieces</a>
+                <a href="natives.html">Tailored Natives</a>
+                <a href="agbada.html">Tailored Agbada</a>
             </div>
-        </header>
-        <section>
-            <div class="store" id="productList">
-                <div class="fd-heading">
-                    <h2>OUR STORE</h2>
-                </div>
-                <div class="fd-content">
-                    <div class="fd-item">
-                        <a href=""><img src="item1.jpg" alt="Product 1"></a>
-                        <h4>2 Pieces NO_001</h4>
-                        <p>₦60,000.00</p>
-                        <div class="fd-item-options">
-                            <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item2.jpg" alt="Product 2"></a>
-                        <h4>2 Pieces NO_002</h4>
-                        <p>₦60,000.00</p>
-                        <div class="fd-item-options">
-                            <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item3.jpg" alt="Product 3"></a>
-                        <h4>2 Pieces NO_003</h4>
-                        <p>₦60,000.00</p>
-                        <div class="fd-item-options">
-                            <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item4.jpg" alt="Product 4"></a>
-                        <h4>2 Pieces NO_004</h4>
-                        <p>₦60,000.00</p>
-                        <div class="fd-item-options">
-                            <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item5.jpg" alt="Product 5"></a>
-                        <h4>2 Pieces NO_005</h4>
-                        <p>₦60,000.00</p>
-                        <div class="fd-item-options">
-                            <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item6.jpg" alt="Product 6"></a>
-                        <h4>2 Pieces NO_006</h4>
-                        <p>₦60,000.00</p>
-                        <div class="fd-item-options">
-                            <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item7.jpg" alt="Product 7"></a>
-                        <h4>2 Pieces NO_007</h4>
-                        <p>₦60,000.00</p>
-                        <div class="fd-item-options">
-                            <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <!--<div class="fd-item">
-                        <a href=""><img src="item8.jpg" alt="Product 7"></a>
-                        <h4>2 Pieces NO_008</h4>
-                        <p>₦60,000.00</p>
-                        <div class="fd-item-options">
-                            <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>-->
-                    <div class="fd-item">
-                        <a href=""><img src="item9.jpg" alt="Product 7"></a>
-                        <h4>2 Pieces NO_009</h4>
-                        <p>₦60,000.00</p>
-                        <div class="fd-item-options">
-                            <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item21.jpg" alt="Product 7"></a>
-                        <h4>2 Pieces NO_010</h4>
-                        <p>₦60,000.00</p>
-                        <div class="fd-item-options">
-                            <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div><div class="fd-item">
-                        <a href=""><img src="item27.jpg" alt="Product 7"></a>
-                        <h4>2 Pieces NO_011</h4>
-                        <p>₦60,000.00</p>
-                        <div class="fd-item-options">
-                            <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item10.jpg" alt="Product 7"></a>
-                        <h4>Tailored Natives NO_001</h4>
-                        <p>₦80,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item11.jpg" alt="Product 7"></a>
-                        <h4>Tailored Natives NO_002</h4>
-                        <p>₦80,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item12.jpg" alt="Product 7"></a>
-                        <h4>Tailored Natives NO_003</h4>
-                        <p>₦80,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item25.jpg" alt="Product 7"></a>
-                        <h4>Tailored Natives NO_004</h4>
-                        <p>₦80,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item26.jpg" alt="Product 7"></a>
-                        <h4>Tailored Natives NO_005</h4>
-                        <p>₦80,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <!--<div class="fd-item">
-                        <a href=""><img src="item27.jpg" alt="Product 7"></a>
-                        <h4>Tailored Natives NO_006</h4>
-                        <p>₦80,000.00</p>
-                        <div class="fd-item-options">
-                            <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>-->
-                    <div class="fd-item">
-                        <a href=""><img src="item28.jpg" alt="Product 7"></a>
-                        <h4>Tailored Natives NO_007</h4>
-                        <p>₦80,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item29.jpg" alt="Product 7"></a>
-                        <h4>Tailored Natives NO_008</h4>
-                        <p>₦80,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item30.jpg" alt="Product 7"></a>
-                        <h4>Tailored Natives NO_009</h4>
-                        <p>₦80,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><video width="640" height="360" controls loop muted autoplay>
-                                <source src="video4.mp4" type="video/mp4">
-                            </video></a>
-                        <h4>Tailored Natives NO_010</h4>
-                        <p>₦80,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item35.jpg" alt="Product 7"></a>
-                        <h4>Tailored Natives NO_011</h4>
-                        <p>₦80,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item36.jpg" alt="Product 7"></a>
-                        <h4>Tailored Natives NO_0012</h4>
-                        <p>₦80,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><video width="640" height="360" controls loop muted autoplay>
-                                <source src="video1.mp4" type="video/mp4">
-                            </video></a>
-                        <h4>Tailored Natives NO_013</h4>
-                        <p>₦80,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><video width="640" height="360" controls loop muted autoplay>
-                                <source src="video3.mp4" type="video/mp4">
-                            </video></a>
-                        <h4>Tailored Natives NO_014</h4>
-                        <p>₦80,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item39.jpg" alt="Product 7"></a>
-                        <h4>Tailored Natives NO_015</h4>
-                        <p>₦80,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><video width="640" height="360" controls loop muted autoplay>
-                                <source src="video2.mp4" type="video/mp4">
-                            </video></a>
-                        <h4>Tailored Natives NO_016</h4>
-                        <p>₦80,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item22.jpg" alt="Product 7"></a>
-                        <h4>Tailored Natives NO_017</h4>
-                        <p>₦80,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item16.jpg" alt="Product 7"></a>
-                        <h4>Tailored Agbada NO_001</h4>
-                        <p>₦200,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item17.jpg" alt="Product 7"></a>
-                        <h4>Tailored Agbada NO_002</h4>
-                        <p>₦200,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item18.jpg" alt="Product 7"></a>
-                        <h4>Tailored Agbada NO_003</h4>
-                        <p>₦200,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item19.jpg" alt="Product 7"></a>
-                        <h4>Tailored Agbada NO_004</h4>
-                        <p>₦200,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item20.jpg" alt="Product 7"></a>
-                        <h4>Tailored Agbada NO_005</h4>
-                        <p>₦200,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                    <div class="fd-item">
-                        <a href=""><img src="item24.jpg" alt="Product 7"></a>
-                        <h4>Tailored Agbada NO_006</h4>
-                        <p>₦200,000.00</p>
-                        <div class="fd-item-options">
-                            <!--<label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>-->
-                            <label>Quantity: <input type="number" name="qty" min="1"></label><br>
-                        </div>
-                        <button onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="checkout-btn" >
-                <button onclick="checkout()">Checkout via WhatsApp</button>
-            </div>
-            <div class="second-display">
-                <div class="cover-image">
-                    <img src="cover image.jpeg" alt="cover image">
-                </div>
-                <div class="sd-content">
-                    <h3>for the occassion</h3>
-                    <p>
-                        Having a special event and need something
-                        custom just for you, we've got you covered.
-                    </p>
-                    <a href="https://wa.me/2347063719207" target="_blank"><button>Book Now</button></a>
-                </div>
-            </div>
-        </section>
-        <footer id="footer">
-            <div class="copyright">
-                <p>&copy; 2026 Abrino Wears. All rights reserved</p>
-            </div>
-            <div class="contact-icons">
-                <a href="tel:+2347063719207" target="_blank" rel="noopener">
-                    <img src="phone.png" alt="Phone">
-                </a>
-                <a href="https://wa.me/2347063719207" target="_blank" rel="noopener">
-                    <img src="WhatsApp 2.png" alt="WhatsApp">
-                </a>
-                <a href="https://www.instagram.com/abrinowears_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">
-                    <img src="IG logo 2.png" alt="Instagram">
-                </a>
-                <a href="https://www.tiktok.com/@abrinowears?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">
-                    <img src="TikTok.png" alt="TikTok">
-                </a>
-            </div>
-        </footer>
-    </body>
 
-<script>
-    const hamburger = document.getElementById('hamburger');
-    const navBar = document.querySelector('.nav-bar');
-    const cartCount = document.getElementById('cartCount');
-    const cartPopup = document.getElementById('cartPopup');
-    const cartIcon = document.getElementById('cartIcon');
-    const cartItemsList = document.getElementById('cartItems');
+            <!-- ── 2 PIECES ── -->
+            <div class="category-divider"><span>2 PIECES</span></div>
+            <div class="fd-content">
+                <div class="fd-item">
+                    <a href=""><img src="item1.jpg" alt="Product 1"></a>
+                    <h4>2 Pieces NO_001</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item2.jpg" alt="Product 2"></a>
+                    <h4>2 Pieces NO_002</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item3.jpg" alt="Product 3"></a>
+                    <h4>2 Pieces NO_003</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item4.jpg" alt="Product 4"></a>
+                    <h4>2 Pieces NO_004</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item5.jpg" alt="Product 5"></a>
+                    <h4>2 Pieces NO_005</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item6.jpg" alt="Product 6"></a>
+                    <h4>2 Pieces NO_006</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item7.jpg" alt="Product 7"></a>
+                    <h4>2 Pieces NO_007</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item9.jpg" alt="Product 9"></a>
+                    <h4>2 Pieces NO_009</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item21.jpg" alt="Product 10"></a>
+                    <h4>2 Pieces NO_010</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item27.jpg" alt="Product 11"></a>
+                    <h4>2 Pieces NO_011</h4>
+                    <p>₦60,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Size: <input type="text" name="size" placeholder="e.g. M"></label><br>
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label><br>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
 
-    hamburger.addEventListener('click', () => {
-        navBar.classList.toggle('active');
-    });
+            <!-- ── TAILORED NATIVES ── -->
+            <div class="category-divider"><span>TAILORED NATIVES</span></div>
+            <div class="fd-content">
+                <div class="fd-item">
+                    <a href=""><img src="item10.jpg" alt="Tailored Natives 1"></a>
+                    <h4>Tailored Natives NO_001</h4>
+                    <p>₦80,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item11.jpg" alt="Tailored Natives 2"></a>
+                    <h4>Tailored Natives NO_002</h4>
+                    <p>₦80,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item12.jpg" alt="Tailored Natives 3"></a>
+                    <h4>Tailored Natives NO_003</h4>
+                    <p>₦80,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item25.jpg" alt="Tailored Natives 4"></a>
+                    <h4>Tailored Natives NO_004</h4>
+                    <p>₦80,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item26.jpg" alt="Tailored Natives 5"></a>
+                    <h4>Tailored Natives NO_005</h4>
+                    <p>₦80,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item28.jpg" alt="Tailored Natives 7"></a>
+                    <h4>Tailored Natives NO_007</h4>
+                    <p>₦80,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item29.jpg" alt="Tailored Natives 8"></a>
+                    <h4>Tailored Natives NO_008</h4>
+                    <p>₦80,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item30.jpg" alt="Tailored Natives 9"></a>
+                    <h4>Tailored Natives NO_009</h4>
+                    <p>₦80,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><video width="640" height="360" controls loop muted autoplay>
+                        <source src="video4.mp4" type="video/mp4">
+                    </video></a>
+                    <h4>Tailored Natives NO_010</h4>
+                    <p>₦80,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item35.jpg" alt="Tailored Natives 11"></a>
+                    <h4>Tailored Natives NO_011</h4>
+                    <p>₦80,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item36.jpg" alt="Tailored Natives 12"></a>
+                    <h4>Tailored Natives NO_012</h4>
+                    <p>₦80,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><video width="640" height="360" controls loop muted autoplay>
+                        <source src="video1.mp4" type="video/mp4">
+                    </video></a>
+                    <h4>Tailored Natives NO_013</h4>
+                    <p>₦80,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><video width="640" height="360" controls loop muted autoplay>
+                        <source src="video3.mp4" type="video/mp4">
+                    </video></a>
+                    <h4>Tailored Natives NO_014</h4>
+                    <p>₦80,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item39.jpg" alt="Tailored Natives 15"></a>
+                    <h4>Tailored Natives NO_015</h4>
+                    <p>₦80,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><video width="640" height="360" controls loop muted autoplay>
+                        <source src="video2.mp4" type="video/mp4">
+                    </video></a>
+                    <h4>Tailored Natives NO_016</h4>
+                    <p>₦80,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item22.jpg" alt="Tailored Natives 17"></a>
+                    <h4>Tailored Natives NO_017</h4>
+                    <p>₦80,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
 
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('.heading-panel');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+            <!-- ── TAILORED AGBADA ── -->
+            <div class="category-divider"><span>TAILORED AGBADA</span></div>
+            <div class="fd-content">
+                <div class="fd-item">
+                    <a href=""><img src="item16.jpg" alt="Tailored Agbada 1"></a>
+                    <h4>Tailored Agbada NO_001</h4>
+                    <p>₦200,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item17.jpg" alt="Tailored Agbada 2"></a>
+                    <h4>Tailored Agbada NO_002</h4>
+                    <p>₦200,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item18.jpg" alt="Tailored Agbada 3"></a>
+                    <h4>Tailored Agbada NO_003</h4>
+                    <p>₦200,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item19.jpg" alt="Tailored Agbada 4"></a>
+                    <h4>Tailored Agbada NO_004</h4>
+                    <p>₦200,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item20.jpg" alt="Tailored Agbada 5"></a>
+                    <h4>Tailored Agbada NO_005</h4>
+                    <p>₦200,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="fd-item">
+                    <a href=""><img src="item24.jpg" alt="Tailored Agbada 6"></a>
+                    <h4>Tailored Agbada NO_006</h4>
+                    <p>₦200,000.00</p>
+                    <div class="fd-item-options">
+                        <label>Quantity: <input type="number" name="qty" min="1" value="1"></label>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="checkout-btn">
+            <a href="cart.html"><button>View Cart & Checkout</button></a>
+        </div>
+
+        <div class="second-display">
+            <div class="cover-image">
+                <img src="cover image.jpeg" alt="cover image">
+            </div>
+            <div class="sd-content">
+                <h3>for the occasion</h3>
+                <p>
+                    Having a special event and need something
+                    custom just for you, we've got you covered.
+                </p>
+                <a href="https://wa.me/2347063719207" target="_blank"><button>Book Now</button></a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="copyright">
+            <p>&copy; 2026 Abrino Wears. All rights reserved</p>
+        </div>
+        <div class="contact-icons">
+            <a href="tel:+2347063719207" target="_blank" rel="noopener">
+                <img src="phone.png" alt="Phone">
+            </a>
+            <a href="https://wa.me/2347063719207" target="_blank" rel="noopener">
+                <img src="WhatsApp 2.png" alt="WhatsApp">
+            </a>
+            <a href="https://www.instagram.com/abrinowears_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">
+                <img src="IG logo 2.png" alt="Instagram">
+            </a>
+            <a href="https://www.tiktok.com/@abrinowears?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">
+                <img src="TikTok.png" alt="TikTok">
+            </a>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navBar = document.querySelector('.nav-bar');
+
+        hamburger.addEventListener('click', () => {
+            navBar.classList.toggle('active');
+        });
+
+        window.addEventListener('scroll', () => {
+            document.querySelector('.heading-panel').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        function addToCart(button) {
+            const item = button.closest(".fd-item");
+            const name = item.querySelector("h4").innerText;
+            const priceText = item.querySelector("p").innerText.replace(/[₦,]/g, '');
+            const price = parseInt(priceText);
+            const sizeInput = item.querySelector('input[name="size"]');
+            const size = sizeInput ? sizeInput.value.trim() : '';
+            const qtyInput = item.querySelector('input[name="qty"]');
+            const qty = qtyInput ? parseInt(qtyInput.value) : 0;
+            if (qty < 1) { alert("Please enter a valid quantity."); return; }
+            CartUtils.addItem(name, price, size, qty);
+            alert(`${name} added to cart!`);
         }
-    });
 
-    let cart = [];
-
-function addToCart(button) {
-    const item = button.closest(".fd-item");
-    const name = item.querySelector("h4").innerText;
-    const priceText = item.querySelector("p").innerText.replace(/[₦,]/g, '');
-    const price = parseInt(priceText);
-
-    // Try to find size input
-    const sizeInput = item.querySelector('input[name="size"]');
-    const size = sizeInput ? sizeInput.value.trim() : ''; // Allow empty if not found
-
-    const qtyInput = item.querySelector('input[name="qty"]');
-    const qty = qtyInput ? parseInt(qtyInput.value) : 0;
-
-    if (qty < 1) {
-        alert("Please enter a valid quantity.");
-        return;
-    }
-
-    cart.push({ name, size, qty, price });
-    updateCartUI();
-    alert(`${name} added to cart.`);
-}
-
-function updateCartUI() {
-    // Update count
-    cartCount.innerText = cart.length;
-    cartCount.style.display = cart.length > 0 ? 'inline-block' : 'none';
-
-    // Update popup list
-    cartItemsList.innerHTML = '';
-    cart.forEach(item => {
-        const subtotal = item.qty * item.price;
-        const li = document.createElement('li');
-        const sizeDisplay = item.size ? ` (${item.size})` : '';
-        li.textContent = `${item.name}${sizeDisplay} x${item.qty} - ₦${subtotal.toLocaleString()}`;
-        cartItemsList.appendChild(li);
-    });
-}
-
-function checkout() {
-    if (cart.length === 0) {
-        alert("Your cart is empty.");
-        return;
-    }
-
-    let message = "Hello! I want to order:\n";
-    let total = 0;
-    cart.forEach(item => {
-        const subtotal = item.qty * item.price;
-        total += subtotal;
-        const sizeDisplay = item.size ? ` (Size: ${item.size})` : '';
-        message += `- ${item.name}${sizeDisplay} x${item.qty} = ₦${subtotal.toLocaleString()}\n`;
-    });
-    message += `\nTotal: ₦${total.toLocaleString()}`;
-
-    const whatsappNumber = "2347063719207";
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-    window.open(whatsappURL, '_blank');
-}
-
-    // Toggle cart popup on icon click
-    cartIcon.addEventListener('click', () => {
-        cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
-    });
-
-    // Optional: close cart popup when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!cartIcon.contains(e.target) && !cartPopup.contains(e.target)) {
-            cartPopup.style.display = 'none';
-        }
-    });
-</script>
-
-
+        document.addEventListener('DOMContentLoaded', () => CartUtils.updateBadge());
+    </script>
 </body>
 </html>

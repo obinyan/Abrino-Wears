@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout – Abrino Wears</title>
+    <link rel="stylesheet" href="store.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <style>
+        .checkout-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 160px 20px 80px;
+        }
+        .checkout-page h2 {
+            font-family: "Playfair", serif;
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 40px;
+            align-items: start;
+        }
+        @media (max-width: 768px) {
+            .checkout-grid { grid-template-columns: 1fr; }
+            .checkout-page h2 { font-size: 32px; }
+        }
+
+        /* Form */
+        .form-section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 32px;
+        }
+        .form-section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: "Inter", sans-serif;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #333;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .form-row.full { grid-template-columns: 1fr; }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .form-group label {
+            font-size: 13px;
+            font-weight: 500;
+            color: #555;
+            font-family: "Inter", sans-serif;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: "Inter", sans-serif;
+            background: #fff;
+            color: #000;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #000;
+        }
+        .form-group textarea { resize: vertical; min-height: 80px; }
+        .divider { border: none; border-top: 1px solid #eee; margin: 24px 0; }
+
+        /* Payment methods */
+        .payment-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        .payment-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            border: 1.5px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        .payment-option:hover { border-color: #999; }
+        .payment-option.selected { border-color: #000; background: #fafafa; }
+        .payment-option input[type="radio"] { display: none; }
+        .payment-radio {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: border-color 0.2s;
+        }
+        .payment-option.selected .payment-radio {
+            border-color: #000;
+        }
+        .payment-option.selected .payment-radio::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #000;
+            border-radius: 50%;
+        }
+        .payment-label { font-size: 15px; font-weight: 500; font-family: "Inter", sans-serif; }
+        .payment-sub { font-size: 13px; color: #777; }
+
+        /* Transfer details */
+        #transferDetails {
+            display: none;
+            background: #f8f5f2;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 12px;
+        }
+        #transferDetails p {
+            font-size: 14px;
+            font-family: "Inter", sans-serif;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        #transferDetails strong { color: #000; }
+        .copy-btn {
+            font-size: 12px;
+            padding: 4px 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            background: #fff;
+            cursor: pointer;
+            font-family: "Inter", sans-serif;
+            margin-left: 8px;
+        }
+
+        /* Order Summary panel */
+        .order-summary-panel {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px;
+            position: sticky;
+            top: 120px;
+        }
+        .order-summary-panel h3 {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: "Inter", sans-serif;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #333;
+        }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+            font-family: "Inter", sans-serif;
+        }
+        .order-item:last-of-type { border-bottom: none; }
+        .order-item-name { color: #333; max-width: 200px; }
+        .order-item-meta { font-size: 12px; color: #888; margin-top: 2px; }
+        .order-item-price { font-weight: 500; white-space: nowrap; }
+        .summary-totals { margin-top: 16px; border-top: 1px solid #eee; padding-top: 16px; }
+        .summary-line {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            font-family: "Inter", sans-serif;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .summary-line.final {
+            font-size: 17px;
+            font-weight: 600;
+            color: #000;
+            margin-top: 8px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+        .discount-tag {
+            display: inline-block;
+            background: #1A0F05;
+            color: #fff;
+            font-size: 11px;
+            padding: 3px 9px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+        .place-order-btn {
+            width: 100%;
+            padding: 15px;
+            background: #000;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: "Inter", sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .place-order-btn:hover { background: #333; }
+        .place-order-btn:disabled { background: #999; cursor: not-allowed; }
+        .secure-note {
+            text-align: center;
+            font-size: 12px;
+            color: #aaa;
+            margin-top: 10px;
+            font-family: "Inter", sans-serif;
+        }
+
+        /* Success state */
+        .order-success {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .order-success .check {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        .order-success h3 {
+            font-size: 28px;
+            font-family: "Playfair", serif;
+            margin-bottom: 16px;
+        }
+        .order-success p {
+            font-size: 16px;
+            color: #555;
+            max-width: 400px;
+            margin: 0 auto 30px;
+        }
+        .order-success a {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #000;
+            color: #fff;
+            border-radius: 25px;
+            text-decoration: none;
+            font-family: "Inter", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="info-panel">
+            <a href="#">Get 10% discount when you order three or more!</a>
+        </div>
+        <div class="heading-panel" id="heading-panel">
+            <div class="logo">
+                <img src="ABRINO LOGO.jpeg copy.png" alt="logo">
+            </div>
+            <div class="hamburger" id="hamburger">&#9776;</div>
+            <div class="nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="store.html">Shop</a></li>
+                    <li><a href="https://www.instagram.com/abrinowears_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">About</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <p>Contact</p>
+                            <div class="dropdown-content">
+                                <a href="tel:+2347063719207">Phone</a>
+                                <a href="">E-mail</a>
+                                <a href="https://wa.me/2347063719207" target="_blank">Help center</a>
+                                <a href="#footer">Socials</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="oder-icons" id="cartIcon">
+                <div class="cart-container">
+                    <a href="cart.html"><img src="shopping-cart.png" alt="cart"></a>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section style="background-color: #e4ded5; min-height: 100vh;">
+        <div class="checkout-page">
+            <h2>CHECKOUT</h2>
+            <div id="checkoutContent"></div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="copyright">
+            <p>&copy; 2026 Abrino Wears. All rights reserved</p>
+        </div>
+        <div class="contact-icons">
+            <a href="tel:+2347063719207" target="_blank" rel="noopener"><img src="phone.png" alt="Phone"></a>
+            <a href="https://wa.me/2347063719207" target="_blank" rel="noopener"><img src="WhatsApp 2.png" alt="WhatsApp"></a>
+            <a href="https://www.instagram.com/abrinowears_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><img src="IG logo 2.png" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/@abrinowears?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener"><img src="TikTok.png" alt="TikTok"></a>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navBar = document.querySelector('.nav-bar');
+        hamburger.addEventListener('click', () => navBar.classList.toggle('active'));
+        window.addEventListener('scroll', () => {
+            document.querySelector('.heading-panel').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        let selectedPayment = 'transfer';
+
+        function renderCheckout() {
+            const cart = CartUtils.getCart();
+            const container = document.getElementById('checkoutContent');
+            CartUtils.updateBadge();
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="order-success">
+                        <div class="check">🛍️</div>
+                        <h3>Your cart is empty</h3>
+                        <p>Add some items before checking out.</p>
+                        <a href="store.html">Go to Shop</a>
+                    </div>`;
+                return;
+            }
+
+            const total = CartUtils.getTotal();
+            const itemCount = cart.reduce((s, i) => s + i.qty, 0);
+            const hasDiscount = itemCount >= 3;
+            const discountAmount = hasDiscount ? Math.round(total * 0.10) : 0;
+            const finalTotal = total - discountAmount;
+
+            const itemsHTML = cart.map(item => `
+                <div class="order-item">
+                    <div>
+                        <div class="order-item-name">${item.name}</div>
+                        ${item.size ? `<div class="order-item-meta">Size: ${item.size} · Qty: ${item.qty}</div>` : `<div class="order-item-meta">Qty: ${item.qty}</div>`}
+                    </div>
+                    <div class="order-item-price">₦${(item.price * item.qty).toLocaleString()}</div>
+                </div>
+            `).join('');
+
+            container.innerHTML = `
+                <div class="checkout-grid">
+                    <!-- LEFT: Form -->
+                    <div>
+                        <div class="form-section">
+                            <h3>Delivery Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>First Name *</label>
+                                    <input type="text" id="firstName" placeholder="Enter first name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name *</label>
+                                    <input type="text" id="lastName" placeholder="Enter last name" required>
+                                </div>
+                            </div>
+                            <div class="form-row full">
+                                <div class="form-group">
+                                    <label>Phone Number *</label>
+                                    <input type="tel" id="phone" placeholder="e.g. 08012345678" required>
+                                </div>
+                            </div>
+                            <div class="form-row full">
+                                <div class="form-group">
+                                    <label>Email Address</label>
+                                    <input type="email" id="email" placeholder="For order confirmation (optional)">
+                                </div>
+                            </div>
+                            <div class="form-row full">
+                                <div class="form-group">
+                                    <label>Delivery Address *</label>
+                                    <input type="text" id="address" placeholder="Street address, area" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>City *</label>
+                                    <input type="text" id="city" placeholder="e.g. Lagos" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>State *</label>
+                                    <select id="state" required>
+                                        <option value="">Select state</option>
+                                        <option>Lagos</option><option>Abuja (FCT)</option><option>Ogun</option>
+                                        <option>Oyo</option><option>Osun</option><option>Ondo</option>
+                                        <option>Ekiti</option><option>Rivers</option><option>Delta</option>
+                                        <option>Edo</option><option>Anambra</option><option>Enugu</option>
+                                        <option>Imo</option><option>Abia</option><option>Cross River</option>
+                                        <option>Akwa Ibom</option><option>Kano</option><option>Kaduna</option>
+                                        <option>Katsina</option><option>Sokoto</option><option>Zamfara</option>
+                                        <option>Kebbi</option><option>Niger</option><option>Kwara</option>
+                                        <option>Benue</option><option>Plateau</option><option>Nassarawa</option>
+                                        <option>Kogi</option><option>Taraba</option><option>Gombe</option>
+                                        <option>Adamawa</option><option>Borno</option><option>Yobe</option>
+                                        <option>Bauchi</option><option>Jigawa</option><option>Bayelsa</option>
+                                        <option>Ebonyi</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row full">
+                                <div class="form-group">
+                                    <label>Order Notes (optional)</label>
+                                    <textarea id="notes" placeholder="Any special instructions, colour preferences, measurements, etc."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section" style="margin-top: 20px;">
+                            <h3>Payment Method</h3>
+                            <div class="payment-options">
+                                <div class="payment-option selected" id="opt-transfer" onclick="selectPayment('transfer')">
+                                    <div class="payment-radio"></div>
+                                    <div>
+                                        <div class="payment-label">Bank Transfer</div>
+                                        <div class="payment-sub">Pay directly to our bank account</div>
+                                    </div>
+                                </div>
+                                <div class="payment-option" id="opt-whatsapp" onclick="selectPayment('whatsapp')">
+                                    <div class="payment-radio"></div>
+                                    <div>
+                                        <div class="payment-label">WhatsApp Order</div>
+                                        <div class="payment-sub">Send order details via WhatsApp</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="transferDetails">
+                                <p><strong>Bank:</strong> First Bank of Nigeria</p>
+                                <p><strong>Account Name:</strong> Abrino Wears</p>
+                                <p>
+                                    <strong>Account Number:</strong>
+                                    <span id="acctNum">0000000000</span>
+                                    <button class="copy-btn" onclick="copyAcct()">Copy</button>
+                                </p>
+                                <p style="color: #888; font-size: 13px; margin-top: 8px;">
+                                    Please use your full name as the payment reference. Send proof of payment via WhatsApp after placing your order.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Order Summary -->
+                    <div class="order-summary-panel">
+                        <h3>Order Summary</h3>
+                        ${hasDiscount ? `<span class="discount-tag">10% discount applied</span>` : ''}
+                        ${itemsHTML}
+                        <div class="summary-totals">
+                            <div class="summary-line">
+                                <span>Subtotal</span>
+                                <span>₦${total.toLocaleString()}</span>
+                            </div>
+                            ${hasDiscount ? `
+                            <div class="summary-line" style="color: green;">
+                                <span>Discount (10%)</span>
+                                <span>−₦${discountAmount.toLocaleString()}</span>
+                            </div>` : ''}
+                            <div class="summary-line">
+                                <span>Delivery</span>
+                                <span style="color: #888;">Calculated on delivery</span>
+                            </div>
+                            <div class="summary-line final">
+                                <span>Total</span>
+                                <span>₦${finalTotal.toLocaleString()}</span>
+                            </div>
+                        </div>
+                        <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
+                        <p class="secure-note">🔒 Your information is secure</p>
+                        <p class="secure-note" style="margin-top: 8px;"><a href="cart.html" style="color: #aaa; text-decoration: underline;">← Back to Cart</a></p>
+                    </div>
+                </div>
+            `;
+
+            // Show transfer details by default
+            document.getElementById('transferDetails').style.display = 'block';
+        }
+
+        function selectPayment(method) {
+            selectedPayment = method;
+            document.querySelectorAll('.payment-option').forEach(el => el.classList.remove('selected'));
+            document.getElementById(`opt-${method}`).classList.add('selected');
+            document.getElementById('transferDetails').style.display = method === 'transfer' ? 'block' : 'none';
+        }
+
+        function copyAcct() {
+            navigator.clipboard.writeText('0000000000').then(() => alert('Account number copied!'));
+        }
+
+        function placeOrder() {
+            const firstName = document.getElementById('firstName')?.value.trim();
+            const lastName = document.getElementById('lastName')?.value.trim();
+            const phone = document.getElementById('phone')?.value.trim();
+            const address = document.getElementById('address')?.value.trim();
+            const city = document.getElementById('city')?.value.trim();
+            const state = document.getElementById('state')?.value;
+            const notes = document.getElementById('notes')?.value.trim();
+
+            if (!firstName || !lastName || !phone || !address || !city || !state) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            const cart = CartUtils.getCart();
+            const total = CartUtils.getTotal();
+            const itemCount = cart.reduce((s, i) => s + i.qty, 0);
+            const hasDiscount = itemCount >= 3;
+            const discountAmount = hasDiscount ? Math.round(total * 0.10) : 0;
+            const finalTotal = total - discountAmount;
+
+            if (selectedPayment === 'whatsapp') {
+                let message = `Hello! I'd like to place an order:\n\n`;
+                cart.forEach(item => {
+                    const sz = item.size ? ` (Size: ${item.size})` : '';
+                    message += `• ${item.name}${sz} x${item.qty} = ₦${(item.price * item.qty).toLocaleString()}\n`;
+                });
+                if (hasDiscount) message += `\nDiscount (10%): −₦${discountAmount.toLocaleString()}`;
+                message += `\n\nTotal: ₦${finalTotal.toLocaleString()}`;
+                message += `\n\nDelivery Details:\nName: ${firstName} ${lastName}\nPhone: ${phone}\nAddress: ${address}, ${city}, ${state}`;
+                if (notes) message += `\nNotes: ${notes}`;
+
+                window.open(`https://wa.me/2347063719207?text=${encodeURIComponent(message)}`, '_blank');
+                CartUtils.clear();
+                showSuccess(firstName);
+            } else {
+                // Bank transfer — show confirmation
+                CartUtils.clear();
+                showSuccess(firstName, true);
+            }
+        }
+
+        function showSuccess(name, isTransfer = false) {
+            const container = document.getElementById('checkoutContent');
+            CartUtils.updateBadge();
+            container.innerHTML = `
+                <div class="order-success">
+                    <div class="check">✅</div>
+                    <h3>Order Received, ${name}!</h3>
+                    <p>${isTransfer
+                        ? 'Thank you! Please complete your bank transfer and send proof of payment via WhatsApp to +234 706 371 9207.'
+                        : 'Your order has been sent via WhatsApp. Our team will confirm your order shortly.'
+                    }</p>
+                    ${isTransfer ? `<p style="font-size:14px; color:#777; margin-top:-16px; margin-bottom: 20px;">Bank: First Bank · Account: Abrino Wears · 0000000000</p>` : ''}
+                    <a href="store.html">Continue Shopping</a>
+                </div>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', renderCheckout);
+    </script>
+</body>
+</html>
