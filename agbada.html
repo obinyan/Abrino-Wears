@@ -191,10 +191,11 @@
             const sizeInput = item.querySelector('input[name="size"]');
             const size = sizeInput ? sizeInput.value.trim() : '';
             const qtyInput = item.querySelector('input[name="qty"]');
-            const qty = qtyInput ? parseInt(qtyInput.value) : 0;
-            if (qty < 1) { alert("Please enter a valid quantity."); return; }
+            const qty = (qtyInput && parseInt(qtyInput.value) >= 1) ? parseInt(qtyInput.value) : 1;
             CartUtils.addItem(name, price, size, qty);
-            alert(`${name} added to cart!`);
+            CartUtils.updateBadge();
+            button.textContent = "✓ Added!";
+            setTimeout(() => button.textContent = "Add to Cart", 1500);
         }
 
         document.addEventListener('DOMContentLoaded', () => CartUtils.updateBadge());
