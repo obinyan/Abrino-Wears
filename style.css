@@ -778,8 +778,12 @@ footer .contact-icons img {
     }
 
     .nav-bar ul {
-        flex-direction: column;
-        gap: 35px;
+        display: block;
+        /*gap: 35px;*/
+    }
+    
+    .nav-bar ul li{
+        margin: 10px 0 0 0;
     }
 
     .oder-icons{
