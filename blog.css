@@ -863,7 +863,7 @@ footer .contact-icons img {
 
     .nav-bar ul {
         flex-direction: column;
-        gap: 15px;
+        gap: 35px;
     }
 
     .oder-icons { display: none; }

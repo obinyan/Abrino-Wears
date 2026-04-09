@@ -119,8 +119,19 @@ body {
     font-weight: 500;
     transition: color 0.3s;
 }
+.nav-bar ul a li {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
 
 .nav-bar ul li a:hover {
+    color: #555;
+}
+
+.nav-bar ul a li:hover {
     color: #555;
 }
 
@@ -768,7 +779,7 @@ footer .contact-icons img {
 
     .nav-bar ul {
         flex-direction: column;
-        gap: 15px;
+        gap: 35px;
     }
 
     .oder-icons{
