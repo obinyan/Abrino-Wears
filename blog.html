@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="blog.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -32,7 +30,7 @@
         <a href="#">Get 10% off on your first three(3) orders</a>
     </div>
 
-    <!-- HEADER / NAV — same structure as homepage -->
+    <!-- HEADER / NAV -->
     <div class="heading-panel" id="heading-panel">
         <div class="logo">
             <img src="ABRINO LOGO.jpeg copy.png" alt="logo">
@@ -59,13 +57,13 @@
                 <li><a href="blog.html">Blog</a></li>
             </ul>
         </div>
-        <div class="oder-icons">
+        <div class="order-icons">
             <img src="wishlist.png" alt="wishlist">
             <img src="shopping-cart.png" alt="cart">
         </div>
     </div>
 
-    <!-- BLOG HERO — same layout language as homepage hero -->
+    <!-- BLOG HERO -->
     <div class="blog-hero-section">
         <div class="blog-hero-bg"></div>
         <div class="blog-hero-text">
@@ -168,7 +166,7 @@
         </div>
     </div>
 
-    <!-- FOOTER — same structure as homepage footer -->
+    <!-- FOOTER -->
     <footer id="footer">
         <div class="copyright">
             <p>&copy; 2026 Abrino Wears. All rights reserved</p>
@@ -221,36 +219,22 @@
     }
 
     async function fetchArticlesFromAI(topic){
-
-    // ✅ Check localStorage first
-    var cached = localStorage.getItem(topic);
-
-    if (cached) {
-        try {
-            return JSON.parse(cached);
-        } catch (e) {
-            localStorage.removeItem(topic); // clear bad cache
+        var cached = localStorage.getItem(topic);
+        if (cached) {
+            try { return JSON.parse(cached); }
+            catch (e) { localStorage.removeItem(topic); }
         }
+        var res = await fetch('/api/blog', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ topic: topic })
+        });
+        if(!res.ok) throw new Error('API ' + res.status);
+        var data = await res.json();
+        if(!data.articles) throw new Error('No articles returned');
+        localStorage.setItem(topic, JSON.stringify(data.articles));
+        return data.articles;
     }
-
-    // 🔄 If no cache → call API
-    var res = await fetch('/api/blog', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ topic: topic })
-    });
-
-    if(!res.ok) throw new Error('API ' + res.status);
-
-    var data = await res.json();
-
-    if(!data.articles) throw new Error('No articles returned');
-
-    // ✅ Save to localStorage
-    localStorage.setItem(topic, JSON.stringify(data.articles));
-
-    return data.articles;
-}
 
     function renderArticles(articles){
         if(!articles||!articles.length) return;
@@ -371,6 +355,13 @@
 
     hamburger.addEventListener('click', () => {
         navBar.classList.toggle('active');
+    });
+
+    // Close nav when a link is clicked on mobile
+    document.querySelectorAll('.nav-bar a').forEach(link => {
+        link.addEventListener('click', () => {
+            navBar.classList.remove('active');
+        });
     });
 
     window.addEventListener('scroll', () => {

@@ -74,15 +74,18 @@ ul { list-style: none; }
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 50px 5px 50px;
+    padding: 15px 50px;                        /* FIXED: was 40px top padding */
     background: rgba(250, 246, 238, 0.92);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     position: fixed;
-    top: 0;
+    top: 33px;                                 /* sits flush under info-panel */
     left: 0;
     right: 0;
     width: 100%;
     z-index: 999;
     border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease-in-out;
 }
 
 .scrolled {
@@ -104,45 +107,83 @@ ul { list-style: none; }
     color: var(--deep);
 }
 
+/* ─── NAV BAR ─────────────────────────────── */
 .nav-bar ul {
     display: flex;
     list-style: none;
-    gap: 65px;
+    align-items: center;
+    gap: 40px;                                 /* IMPROVED: clean even spacing */
 }
 
 .nav-bar ul li a {
     text-decoration: none;
     color: var(--deep);
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
+    letter-spacing: 0.3px;
     transition: color 0.3s;
+    position: relative;
+    padding-bottom: 4px;
 }
 
-.nav-bar ul li a:hover { color: var(--gold); }
-.nav-bar ul li p:hover { cursor: pointer; }
+/* Gold underline slide-in on hover */
+.nav-bar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--gold);
+    transition: width 0.3s ease;
+}
 
+.nav-bar ul li a:hover {
+    color: var(--gold);
+}
+
+.nav-bar ul li a:hover::after {
+    width: 100%;
+}
+
+.nav-bar ul li p:hover {
+    cursor: pointer;
+    color: var(--gold);
+}
+
+/* ─── DROPDOWN ────────────────────────────── */
 .dropdown { position: relative; }
+
+.dropdown p {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: color 0.3s;
+}
 
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 23px;
+    top: 28px;
     left: 0;
     background-color: var(--cream);
-    box-shadow: 0px 4px 8px rgba(26, 15, 5, 0.12);
+    box-shadow: 0px 4px 16px rgba(26, 15, 5, 0.12);
     min-width: 150px;
     z-index: 1000;
     border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .dropdown:hover .dropdown-content { display: block; }
 
 .dropdown-content a {
     display: block;
-    padding: 10px 15px;
+    padding: 10px 16px;
     text-decoration: none;
     color: var(--text-body);
     font-size: 14px;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .dropdown-content a:hover {
@@ -150,19 +191,26 @@ ul { list-style: none; }
     color: var(--gold);
 }
 
-.oder-icons {
-    display: none;
+/* ─── ORDER ICONS ─────────────────────────── */
+/* FIXED: renamed oder-icons → order-icons */
+.order-icons {
+    display: flex;
     align-items: center;
+    gap: 12px;
 }
 
-.oder-icons img {
+.order-icons img {
     height: 26px;
     width: 26px;
-    margin-left: 10px;
     cursor: pointer;
+    transition: opacity 0.2s;
 }
 
-/* ─── BLOG HERO — same layout as homepage hero ─ */
+.order-icons img:hover {
+    opacity: 0.65;
+}
+
+/* ─── BLOG HERO ───────────────────────────── */
 .blog-hero-section {
     height: 100vh;
     background-color: var(--deep);
@@ -170,7 +218,6 @@ ul { list-style: none; }
     overflow: hidden;
 }
 
-/* Fabric-texture overlay, same concept as homepage hero image */
 .blog-hero-bg {
     position: absolute;
     top: 0;
@@ -232,7 +279,6 @@ ul { list-style: none; }
     padding: 20px 0 0 100px;
 }
 
-/* Blog hero button — same shape/feel as homepage button */
 .blog-hero-button button {
     width: 200px;
     height: 50px;
@@ -430,7 +476,6 @@ ul { list-style: none; }
     text-transform: uppercase;
 }
 
-/* Read more button — inherits homepage rounded button DNA */
 .read-more-btn {
     display: inline-flex;
     align-items: center;
@@ -690,7 +735,6 @@ ul { list-style: none; }
     flex-shrink: 0;
 }
 
-/* Swatch dot colours */
 .swatch-dot.ankara { background: #2C1A08; }
 .swatch-dot.kente { background: repeating-linear-gradient(90deg, #C8943A 0, #C8943A 6px, #1A0F05 6px, #1A0F05 12px); }
 .swatch-dot.aso-oke-sw { background: repeating-linear-gradient(0deg, #C8943A 0, #C8943A 3px, #FAF6EE 3px, #FAF6EE 9px); }
@@ -803,7 +847,7 @@ ul { list-style: none; }
     border-top: 1px solid var(--border);
 }
 
-/* ─── FOOTER — same as homepage ──────────── */
+/* ─── FOOTER ──────────────────────────────── */
 footer {
     background-color: var(--deep);
     color: var(--cream);
@@ -866,7 +910,12 @@ footer .contact-icons img {
         gap: 35px;
     }
 
-    .oder-icons { display: none; }
+    /* Disable underline animation on mobile */
+    .nav-bar ul li a::after {
+        display: none;
+    }
+
+    .order-icons { display: none; }
     .dropdown-content { display: none; }
 
     .blog-hero-text { padding: 200px 20px 0 20px; text-align: center; }
