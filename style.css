@@ -109,8 +109,8 @@ body {
 .nav-bar ul {
     display: flex;
     list-style: none;
-    /*gap: 65px;*/
-    justify-content: space-between;
+    gap: 65px;
+    /*justify-content: space-between;*/
 }
 
 .nav-bar ul li a {
@@ -784,7 +784,7 @@ footer .contact-icons img {
     }
     
     .nav-bar ul li{
-        margin: 10px 0 0 0;
+        padding: 15px 0 0 0;
     }
 
     .oder-icons{
