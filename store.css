@@ -103,7 +103,7 @@ body {
 /* Hamburger (for mobile) */
 .hamburger {
     display: none;
-    font-size: 28px;
+    font-size: 30px;
     cursor: pointer;
 }
 
@@ -118,7 +118,7 @@ body {
 .nav-bar ul li a {
     text-decoration: none;
     color: #000;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 500;
     letter-spacing: 0.3px;
     transition: color 0.3s;
@@ -209,8 +209,8 @@ body {
 }
 
 .cart-container img {
-    height: 26px;
-    width: 26px;
+    height: 34px;
+    width: 34px;
     transition: opacity 0.2s;
 }
 
@@ -489,7 +489,7 @@ footer .contact-icons img {
     .hamburger {
         display: block;
         margin-left: auto;
-        font-size: 26px;
+        font-size: 35px;
     }
 
     .nav-bar {
