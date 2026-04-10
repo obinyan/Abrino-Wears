@@ -39,13 +39,11 @@ ul {
     transition: all 0.3s ease-in-out;
 }
 
-
 /* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
 body {
@@ -56,10 +54,9 @@ body {
     font-optical-sizing: auto;
 }
 
-/* Header / Navbar */
-/* Info Panel (Top Purple Bar) */
+/* ── INFO PANEL ── */
 .info-panel {
-    background-color: #1A0F05; /* same purple tone */
+    background-color: #1A0F05;
     color: white;
     text-align: center;
     padding: 8px 0;
@@ -78,21 +75,24 @@ body {
     font-weight: 500;
 }
 
+/* ── HEADING PANEL ── */
 .heading-panel {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 50px;
-    background: rgba(255, 255, 255, 0.95);
+    padding: 15px 50px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     position: fixed;
-    top: 32px; /* Push down to avoid overlapping the purple bar */
+    top: 33px;
     left: 0;
     right: 0;
     width: 100%;
     z-index: 999;
     border-bottom: 1px solid #ddd;
+    transition: all 0.3s ease-in-out;
 }
-
 
 /* Logo */
 .logo img {
@@ -107,44 +107,73 @@ body {
     cursor: pointer;
 }
 
-/* Navigation bar */
+/* ── NAV BAR ── */
 .nav-bar ul {
     display: flex;
     list-style: none;
-    gap: 65px;
+    align-items: center;
+    gap: 40px;
 }
 
 .nav-bar ul li a {
     text-decoration: none;
     color: #000;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
+    letter-spacing: 0.3px;
     transition: color 0.3s;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+/* Underline hover effect */
+.nav-bar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: #FF8C00;
+    transition: width 0.3s ease;
 }
 
 .nav-bar ul li a:hover {
-    color: #555;
+    color: #FF8C00;
 }
 
-.nav-bar ul li p:hover{
+.nav-bar ul li a:hover::after {
+    width: 100%;
+}
+
+.nav-bar ul li p:hover {
     cursor: pointer;
+    color: #FF8C00;
 }
 
-/* Dropdown */
+/* ── DROPDOWN ── */
 .dropdown {
     position: relative;
-    
+}
+
+.dropdown p {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: color 0.3s;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 23px;
+    top: 28px;
     left: 0;
     background-color: #fff;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12);
     min-width: 150px;
     z-index: 1000;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .dropdown:hover .dropdown-content {
@@ -153,18 +182,20 @@ body {
 
 .dropdown-content a {
     display: block;
-    padding: 10px 15px;
+    padding: 10px 16px;
     text-decoration: none;
     color: #333;
     font-size: 14px;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .dropdown-content a:hover {
-    background-color: #f2f2f2;
+    background-color: #f9f9f9;
+    color: #FF8C00;
 }
 
-/* Order Icons */
-.oder-icons {
+/* ── ORDER / CART ICONS ── (fixed typo: oder → order) */
+.order-icons {
     display: flex;
     align-items: center;
     position: relative;
@@ -180,6 +211,11 @@ body {
 .cart-container img {
     height: 26px;
     width: 26px;
+    transition: opacity 0.2s;
+}
+
+.cart-container img:hover {
+    opacity: 0.65;
 }
 
 /* Cart Count Badge */
@@ -199,7 +235,7 @@ body {
 /* Cart Popup */
 .cart-popup {
     position: absolute;
-    top: 50px; /* adjust if needed */
+    top: 50px;
     right: 0;
     width: 250px;
     background: white;
@@ -228,16 +264,13 @@ body {
     margin-bottom: 6px;
 }
 
-
-/*styling section*/
-section{
+/* ── SECTION ── */
+section {
     background-color: #e4ded5;
-    /*background-image: url('AYOBA-scaled.jpg');*/
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-
 }
 
 .fd-heading h2 {
@@ -256,7 +289,6 @@ section{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
-    /*max-width: 1200px;*/
     margin: 0 auto 50px;
     padding: 0 20px;
 }
@@ -264,10 +296,7 @@ section{
 .fd-item {
     text-align: center;
     transition: transform 0.3s ease;
-    /*background-color: rgba(255, 255, 255, 0.5);*/
-    /*padding: 15px;*/
     border-radius: 10px;
-    /*height: 520px;*/
     overflow-y: auto;
 }
 
@@ -307,12 +336,7 @@ section{
     transform: translateY(-5px);
 }
 
-/*.fd-item img:hover {
-    border: 2px solid #680ebd;
-}*/
-
 .fd-item label {
-    /*display: block;*/
     margin: 5px 0;
 }
 
@@ -347,14 +371,14 @@ section{
     padding: 10px 25px;
     font-size: 16px;
     border-radius: 10px;
-    background-color: #680ebd; /* Purple color */
+    background-color: #680ebd;
     color: white;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-/*the second display section*/
+/* ── SECOND DISPLAY ── */
 .second-display {
     display: flex;
     height: 100vh;
@@ -362,7 +386,6 @@ section{
     overflow: hidden;
 }
 
-/* Image container */
 .cover-image {
     width: 50vw;
     height: 100vh;
@@ -374,11 +397,10 @@ section{
     object-fit: cover;
 }
 
-/* Content Section */
 .sd-content {
     width: 50vw;
     height: 100vh;
-    background-color: #1f0f0f; /* Deep dark brown */
+    background-color: #1f0f0f;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -405,7 +427,6 @@ section{
     max-width: 400px;
 }
 
-/* Button styling */
 .sd-content button {
     padding: 12px 30px;
     font-size: 15px;
@@ -425,7 +446,7 @@ section{
     color: #1f0f0f;
 }
 
-/* FOOTER */
+/* ── FOOTER ── */
 footer {
     background-color: #222;
     color: white;
@@ -453,14 +474,10 @@ footer .contact-icons img {
     height: 25px;
 }
 
-/* -------------------------
-MOBILE RESPONSIVE DESIGN
--------------------------- */
+/* ===================== RESPONSIVE ===================== */
+
 @media (max-width: 768px) {
-    /* Header adjustments */
     .heading-panel {
-        /*flex-direction: column;
-        align-items: flex-start;*/
         padding: 10px 25px;
     }
 
@@ -496,7 +513,11 @@ MOBILE RESPONSIVE DESIGN
         margin-left: 10px;
     }
 
-    /* Dropdown positioning */
+    /* Disable underline animation on mobile */
+    .nav-bar ul li a::after {
+        display: none;
+    }
+
     .dropdown-content {
         position: static;
         box-shadow: none;
@@ -509,18 +530,14 @@ MOBILE RESPONSIVE DESIGN
         font-size: 14px;
     }
 
-    /* Cart popup fix */
     .cart-popup {
         top: 100px;
         right: 20px;
         width: 90%;
     }
 
-    /* Product grid responsiveness */
     .fd-content {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        /*padding: 0 10px;
-        gap: 20px;*/    
     }
 
     .fd-item {
@@ -533,11 +550,10 @@ MOBILE RESPONSIVE DESIGN
         padding-top: 120px;
     }
 
-    .fd-item-options{
+    .fd-item-options {
         margin-left: 40px;
     }
 
-    /* Second display section */
     .second-display {
         flex-direction: column;
         height: auto;
@@ -562,9 +578,6 @@ MOBILE RESPONSIVE DESIGN
     .sd-content p {
         max-width: 100%;
     }
-
-    /* Footer layout */
-    
 
     footer {
         flex-direction: column;

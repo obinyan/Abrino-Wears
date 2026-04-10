@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="store.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -90,7 +89,7 @@
                     <li><a href="blog.html">Blog</a></li>
                 </ul>
             </div>
-            <div class="oder-icons" id="cartIcon">
+            <div class="order-icons" id="cartIcon">
                 <div class="cart-container">
                     <a href="cart.html"><img src="shopping-cart.png" alt="cart"></a>
                     <span class="cart-count" id="cartCount">0</span>
@@ -481,6 +480,13 @@
 
         hamburger.addEventListener('click', () => {
             navBar.classList.toggle('active');
+        });
+
+        // Close nav when a link is clicked on mobile
+        document.querySelectorAll('.nav-bar a').forEach(link => {
+            link.addEventListener('click', () => {
+                navBar.classList.remove('active');
+            });
         });
 
         window.addEventListener('scroll', () => {
