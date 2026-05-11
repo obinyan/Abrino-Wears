@@ -885,9 +885,9 @@ footer .contact-icons img {
     .hamburger {
         display: block;
         position: absolute;
-        top: 35px;
+        /*top: 35px;*/
         right: 25px;
-        font-size: 35px;
+        font-size: 47px;
     }
 
     .logo { position: relative; right: 30px; }
