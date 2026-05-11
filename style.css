@@ -726,15 +726,15 @@ footer .contact-icons img {
         right: 30px;
     }
 
-    .nav-bar {
+   .nav-bar {
         display: none;
         position: absolute;
-        top: 80px;
+        top: 70px;
         right: 0px;
         width: 100%;
         background-color: white;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        padding: 20px;
+        padding: 15px;
     }
 
     .nav-bar.active {
@@ -742,14 +742,12 @@ footer .contact-icons img {
     }
 
     .nav-bar ul {
-        display: block;
+        flex-direction: column;
+        gap: 35px;
+        margin-left: 10px;
     }
 
-    .nav-bar ul li {
-        padding: 15px 0 0 0;
-    }
-
-    /* Reset underline effect on mobile */
+    /* Disable underline animation on mobile */
     .nav-bar ul li a::after {
         display: none;
     }
@@ -759,7 +757,15 @@ footer .contact-icons img {
     }
 
     .dropdown-content {
-        display: none;
+        position: static;
+        box-shadow: none;
+        background: transparent;
+        padding-left: 10px;
+    }
+
+    .dropdown-content a {
+        padding: 8px 0;
+        font-size: 14px;
     }
 
     .hero-section {
