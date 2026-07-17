@@ -793,13 +793,12 @@ footer .contact-icons img {
     }
 
     .hero-text {
-        text-align: center;
-        padding: 0px 20px 0 20px;
-        margin-top: -30px;
-    }
+        /*text-align: center;*/
+        padding: 30px 20px 0 20px;
+        /*margin-top: -20px;*/
     }
 
-    .hero-text h1 {
+   .hero-text h1 {
         font-size: 40px;
         font-weight: 800;
         color: #0e0b04;
