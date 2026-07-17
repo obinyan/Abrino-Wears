@@ -259,7 +259,7 @@ body {
     font-family: "Playfair", serif;
     font-optical-sizing: auto;
     font-style: normal;
-    color: #0e0b04;
+    color: rgb(48, 0, 0);
 }
 
 .hero-text p {
@@ -267,7 +267,7 @@ body {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     margin: 0 0 20px 0;
-    color: #000;
+    color: rgb(48, 0, 0);
 }
 
 button {
