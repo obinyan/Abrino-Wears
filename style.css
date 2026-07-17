@@ -132,6 +132,22 @@ body {
     display: block;
 }
 
+.title-text {
+    flex-shrink: 0;
+    margin-right: auto;
+    margin-left: 200px;
+}
+
+.title-text h1 {
+    font-family: "Playfair", serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #1A0F05;
+    margin: 0;
+    white-space: nowrap;
+}
+
 /* Hamburger (for mobile) */
 .hamburger {
     display: none;
@@ -757,6 +773,20 @@ footer .contact-icons img {
     .logo {
         position: relative;
         right: 30px;
+    }
+
+    @media (max-width: 768px) {
+    .heading-panel {
+        position: relative;
+    }
+
+    .title-text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        pointer-events: none;
     }
 
    .nav-bar {
