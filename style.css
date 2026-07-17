@@ -134,8 +134,8 @@ body {
 
 .title-text {
     flex-shrink: 0;
-    margin-right: auto;
-    margin-left: 200px;
+    /*margin-right: auto;
+    margin-left: 200px;*/
 }
 
 .title-text h1 {
