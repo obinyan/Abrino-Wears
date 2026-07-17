@@ -775,7 +775,6 @@ footer .contact-icons img {
         right: 30px;
     }
 
-    @media (max-width: 768px) {
     .heading-panel {
         position: relative;
     }
@@ -788,6 +787,16 @@ footer .contact-icons img {
         margin: 0;
         pointer-events: none;
     }
+
+    .title-text h1 {
+    font-family: "Playfair", serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #1A0F05;
+    margin: 0;
+    white-space: nowrap;
+}
 
    .nav-bar {
         display: none;
