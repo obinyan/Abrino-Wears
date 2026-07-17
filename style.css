@@ -804,17 +804,18 @@ footer .contact-icons img {
     }
 
     .hero-text p {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 600;
-        color: #000000;
+        color: #1a0f05;
         -webkit-text-stroke: 0.7px #000;
-        /*text-shadow: 
+        text-shadow: 
             -1px -1px 0 #FF8C00,
             1px -1px 0 #FF8C00,
             -1px 1px 0 #FF8C00,
-            1px 1px 0 #FF8C00;*/
+            1px 1px 0 #FF8C00;
         margin: 20px 0 20px 0;
     }
+
 
     .hero-button {
         text-align: center;
