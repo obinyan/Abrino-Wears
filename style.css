@@ -794,7 +794,7 @@ footer .contact-icons img {
 
     .hero-text {
         text-align: center;
-        padding: 50px 20px 0 20px;
+        padding: 0px 20px 0 20px;
     }
 
     .hero-text h1 {
@@ -807,7 +807,7 @@ footer .contact-icons img {
         font-size: 18px;
         font-weight: 600;
         color: #A9A9A9;
-        -webkit-text-stroke: 0.1px #A9A9A9;
+        -webkit-text-stroke: 0.2px #A9A9A9;
         /*text-shadow: 
             -1px -1px 0 #FF8C00,
             1px -1px 0 #FF8C00,
