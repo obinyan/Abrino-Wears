@@ -795,6 +795,8 @@ footer .contact-icons img {
     .hero-text {
         text-align: center;
         padding: 0px 20px 0 20px;
+        margin-top: -30px;
+    }
     }
 
     .hero-text h1 {
