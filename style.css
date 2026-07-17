@@ -69,12 +69,39 @@ body {
     right: 0;
     width: 100%;
     z-index: 1000;
+    overflow: hidden;
 }
 
-.info-panel a {
+.info-slider {
+    position: relative;
+    height: 18px;
+}
+
+.info-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     color: white;
     text-decoration: none;
     font-weight: 500;
+    margin: 0;
+    opacity: 0;
+    animation: infoFade 8s infinite;
+}
+
+.info-slide:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.info-slide:nth-child(2) {
+    animation-delay: 4s;
+}
+
+@keyframes infoFade {
+    0%, 5%   { opacity: 0; }
+    10%, 40% { opacity: 1; }
+    45%, 100% { opacity: 0; }
 }
 
 .heading-panel {
