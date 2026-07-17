@@ -592,10 +592,10 @@ button:hover {
     width: 30%;
 }
 
-.fd-image1 img,
-.fd-image2 img {
+.fd-image1 video,
+.fd-image2 video {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     border-radius: 4px;
     object-fit: cover;
