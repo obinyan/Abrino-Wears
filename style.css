@@ -101,6 +101,10 @@ body {
     width: 65px;
 }
 
+.logo a {
+    display: block;
+}
+
 /* Hamburger (for mobile) */
 .hamburger {
     display: none;

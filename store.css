@@ -96,8 +96,12 @@ body {
 
 /* Logo */
 .logo img {
-    height: 60px;
-    width: 75px;
+    height: 50px;
+    width: 65px;
+}
+
+.logo a {
+    display: block;
 }
 
 /* Hamburger (for mobile) */
