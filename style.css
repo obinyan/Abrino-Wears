@@ -255,7 +255,7 @@ body {
     font-family: "Playfair", serif;
     font-optical-sizing: auto;
     font-style: normal;
-    color: #000;
+    color: #0e0b04;
 }
 
 .hero-text p {
@@ -802,7 +802,7 @@ footer .contact-icons img {
     .hero-text p {
         font-size: 18px;
         font-weight: 600;
-        color: #000;
+        color: #1A0F05;
         margin: 20px 0 20px 0;
     }
 
